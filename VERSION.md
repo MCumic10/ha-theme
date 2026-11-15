@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.3.0**
+**Current version: 0.4.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.4.0] - 2026-11-15
+- Palette switched to user-chosen base colors: brown `#34221b`, oxblood `#552a24`, slate `#4c5059`, stone `#555c5e`, tan `#806653`.
+- Oxblood header bar, slate sidebar, stone dividers, brown cards (dark) and warm stone-parchment (light).
+- Semantic colors (success, info, warning, etc.) retuned to muted tones that fit the new palette.
 
 ### [0.3.0] - 2026-11-15
 - card-mod ornaments (optional, needs card-mod): gold top rule and soft gold glow on cards, small-caps spaced card titles, gold rule under dashboard header, sidebar edge and small-caps title, framed more-info dialogs.
