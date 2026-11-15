@@ -49,4 +49,4 @@ The HA MCP tools in this environment control devices only; do not use them to ed
 | Raised surface (inputs, alt rows) | `#2f352c` | `#ece4cf` |
 | Sidebar / header bg | `#161914` / `#20251e` | `#ddd5bf` |
 
-Both modes must define the same set of variables. Fonts are a system serif stack (a theme cannot load web fonts). card-mod ornaments are not used yet.
+Both modes must define the same set of variables. Fonts are a system serif stack (a theme cannot load web fonts). card-mod ornaments live in the shared `card-mod-*` keys of the theme (use only theme variables so both modes work; ignored without card-mod).

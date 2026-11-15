@@ -28,6 +28,39 @@ Nordic Fantasy:
   mdc-shape-small: 2px
   mdc-shape-large: 6px
 
+  # ================= card-mod (requires card-mod from HACS) =================
+  # Ignored by Home Assistant if card-mod is not installed.
+  # Uses theme variables only, so it follows light/dark automatically.
+  card-mod-card: |
+    ha-card {
+      border-top: 2px solid var(--primary-color);
+      background-image: linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.08), transparent 70px);
+    }
+    .card-header {
+      font-variant: small-caps;
+      letter-spacing: 0.08em;
+    }
+  card-mod-root: |
+    .header, app-header {
+      border-bottom: 2px solid var(--primary-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+  card-mod-sidebar: |
+    :host {
+      border-right: 2px solid var(--primary-color);
+    }
+    .title {
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      color: var(--sidebar-selected-text-color);
+    }
+  card-mod-more-info: |
+    $: |
+      .mdc-dialog .mdc-dialog__surface {
+        border: 1px solid var(--divider-color);
+        border-top: 2px solid var(--primary-color);
+      }
+
   modes:
     # ===================== DARK =====================
     dark:
