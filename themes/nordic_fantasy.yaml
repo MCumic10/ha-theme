@@ -1,0 +1,57 @@
+# Nordic Fantasy - Home Assistant theme
+# Natural, earthy fantasy palette (Elder Scrolls / Skyrim inspired).
+# Palette values are defined once as anchors, then referenced below.
+# Keep in sync with the palette table in CLAUDE.md.
+
+Nordic Fantasy:
+  # --- Dark palette ---
+  dark-bg: &dark-bg "#1c1f1a"
+  dark-card: &dark-card "#262b24"
+  dark-primary: &dark-primary "#b08d4f"
+  dark-accent: &dark-accent "#6f8f5a"
+  dark-text: &dark-text "#e6dfc9"
+  dark-text2: &dark-text2 "#a39d88"
+  dark-divider: &dark-divider "#3a4036"
+
+  # --- Light palette ---
+  light-bg: &light-bg "#e9e2d0"
+  light-card: &light-card "#f4eedd"
+  light-primary: &light-primary "#8a6a2f"
+  light-accent: &light-accent "#556b3f"
+  light-text: &light-text "#2b2a24"
+  light-text2: &light-text2 "#6b6757"
+  light-divider: &light-divider "#cbbf9f"
+
+  error-color: "#a8483a"
+
+  modes:
+    dark:
+      primary-color: *dark-primary
+      accent-color: *dark-accent
+      primary-background-color: *dark-bg
+      secondary-background-color: *dark-card
+      card-background-color: *dark-card
+      primary-text-color: *dark-text
+      secondary-text-color: *dark-text2
+      divider-color: *dark-divider
+      app-header-background-color: *dark-card
+      app-header-text-color: *dark-text
+      sidebar-background-color: *dark-bg
+      sidebar-text-color: *dark-text2
+      sidebar-selected-text-color: *dark-primary
+      sidebar-selected-icon-color: *dark-primary
+    light:
+      primary-color: *light-primary
+      accent-color: *light-accent
+      primary-background-color: *light-bg
+      secondary-background-color: *light-card
+      card-background-color: *light-card
+      primary-text-color: *light-text
+      secondary-text-color: *light-text2
+      divider-color: *light-divider
+      app-header-background-color: *light-card
+      app-header-text-color: *light-text
+      sidebar-background-color: *light-bg
+      sidebar-text-color: *light-text2
+      sidebar-selected-text-color: *light-primary
+      sidebar-selected-icon-color: *light-primary
