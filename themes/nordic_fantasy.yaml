@@ -1,57 +1,342 @@
 # Nordic Fantasy - Home Assistant theme
-# Natural, earthy fantasy palette (Elder Scrolls / Skyrim inspired).
-# Palette values are defined once as anchors, then referenced below.
-# Keep in sync with the palette table in CLAUDE.md.
+# Natural, earthy fantasy palette (Elder Scrolls / Skyrim inspired):
+# night forest, moss, weathered stone, parchment, aged gold, ember.
+# Palette table lives in CLAUDE.md - keep in sync.
+# Anchors (d-* dark, l-* light) are defined inline at first use.
 
 Nordic Fantasy:
-  # --- Dark palette ---
-  dark-bg: &dark-bg "#1c1f1a"
-  dark-card: &dark-card "#262b24"
-  dark-primary: &dark-primary "#b08d4f"
-  dark-accent: &dark-accent "#6f8f5a"
-  dark-text: &dark-text "#e6dfc9"
-  dark-text2: &dark-text2 "#a39d88"
-  dark-divider: &dark-divider "#3a4036"
+  # ================= Shared (both modes) =================
+  # Typography: serif stack, available on Windows/macOS/Linux/Android/iOS
+  primary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+  secondary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+  paper-font-common-base_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+  paper-font-body1_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+  paper-font-headline_-_font-family: "Georgia, 'Palatino Linotype', serif"
+  ha-card-header-font-family: "Georgia, 'Palatino Linotype', serif"
+  ha-card-header-font-size: 20px
+  ha-card-header-font-weight: "600"
 
-  # --- Light palette ---
-  light-bg: &light-bg "#e9e2d0"
-  light-card: &light-card "#f4eedd"
-  light-primary: &light-primary "#8a6a2f"
-  light-accent: &light-accent "#556b3f"
-  light-text: &light-text "#2b2a24"
-  light-text2: &light-text2 "#6b6757"
-  light-divider: &light-divider "#cbbf9f"
-
-  error-color: "#a8483a"
+  # Shape: carved-stone feel, modest rounding with thin borders
+  ha-card-border-radius: 10px
+  ha-card-border-width: 1px
+  ha-button-border-radius: 8px
+  ha-dialog-border-radius: 14px
+  ha-bottom-sheet-border-radius: 14px
+  ha-tooltip-border-radius: 6px
+  switch-track-border-radius: 10px
+  mdc-shape-medium: 10px
+  mdc-shape-small: 6px
+  mdc-shape-large: 14px
 
   modes:
+    # ===================== DARK =====================
     dark:
-      primary-color: *dark-primary
-      accent-color: *dark-accent
-      primary-background-color: *dark-bg
-      secondary-background-color: *dark-card
-      card-background-color: *dark-card
-      primary-text-color: *dark-text
-      secondary-text-color: *dark-text2
-      divider-color: *dark-divider
-      app-header-background-color: *dark-card
-      app-header-text-color: *dark-text
-      sidebar-background-color: *dark-bg
-      sidebar-text-color: *dark-text2
-      sidebar-selected-text-color: *dark-primary
-      sidebar-selected-icon-color: *dark-primary
+      # Core
+      primary-color: &d-primary "#b08d4f"           # aged gold
+      dark-primary-color: "#8a6a2f"
+      light-primary-color: "#d1b277"
+      accent-color: &d-accent "#6f8f5a"             # moss
+      text-primary-color: "#1c1f1a"                 # text on gold fills
+      primary-background-color: &d-bg "#1c1f1a"     # night forest
+      secondary-background-color: &d-card "#262b24" # mossy stone
+      card-background-color: *d-card
+      primary-text-color: &d-text "#e6dfc9"
+      secondary-text-color: &d-text2 "#a39d88"
+      disabled-text-color: "#6b6f62"
+      disabled-color: "#4a5045"
+      divider-color: &d-divider "#3a4036"
+      outline-color: *d-divider
+      rgb-primary-color: "176, 141, 79"
+      rgb-accent-color: "111, 143, 90"
+      rgb-primary-text-color: "230, 223, 201"
+      rgb-secondary-text-color: "163, 157, 136"
+      rgb-card-background-color: "38, 43, 36"
+      rgb-primary-background-color: "28, 31, 26"
+
+      # Background: soft forest-light gradient behind dashboards
+      lovelace-background: "radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed"
+
+      # Cards
+      ha-card-border-color: *d-divider
+      ha-card-box-shadow: "0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(230,223,201,0.04)"
+      ha-card-header-color: "#d1b277"
+
+      # Header / toolbar / tabs
+      app-header-background-color: "#20251e"
+      app-header-text-color: *d-text
+      app-header-selection-bar-color: *d-primary
+      paper-tabs-selection-bar-color: *d-primary
+
+      # Sidebar
+      sidebar-background-color: "#161914"
+      sidebar-icon-color: *d-text2
+      sidebar-text-color: *d-text2
+      sidebar-selected-background-color: "rgba(176,141,79,0.14)"
+      sidebar-selected-icon-color: *d-primary
+      sidebar-selected-text-color: "#d1b277"
+
+      # Semantic
+      error-color: "#b8523f"                        # ember red
+      warning-color: "#d6a043"                      # amber
+      success-color: "#7a9a56"                      # spring moss
+      info-color: "#7fa3b5"                         # frost
+      label-badge-red: "#b8523f"
+      label-badge-green: "#7a9a56"
+      label-badge-blue: "#7fa3b5"
+      label-badge-yellow: "#d6a043"
+      label-badge-grey: "#6b6f62"
+
+      # Entity state colors
+      state-icon-color: *d-text2
+      state-icon-active-color: *d-primary
+      state-icon-unavailable-color: "#6b6f62"
+      state-light-active-color: "#e8c46a"           # candlelight
+      state-switch-active-color: "#7a9a56"
+      state-fan-active-color: "#7fa3b5"
+      state-cover-active-color: "#b08d4f"
+      state-media_player-active-color: "#9a80b0"    # arcane
+      state-lock-locked-color: "#7a9a56"
+      state-lock-unlocked-color: "#d6a043"
+      state-lock-jammed-color: "#b8523f"
+      state-climate-heat-color: "#d0702f"           # ember
+      state-climate-cool-color: "#7fa3b5"           # frost
+      state-climate-auto-color: "#7a9a56"
+      state-climate-dry-color: "#d6a043"
+      state-climate-fan_only-color: "#7fa3b5"
+      state-climate-off-color: "#6b6f62"
+      state-person-home-color: "#7a9a56"
+      state-person-zone-color: "#d6a043"
+      state-person-not_home-color: "#6b6f62"
+      state-binary_sensor-active-color: "#d6a043"
+      state-alert-on-color: "#b8523f"
+      state-sun-day-color: "#e8c46a"
+      state-sun-night-color: "#9a80b0"
+
+      # Switches
+      switch-checked-color: *d-primary
+      switch-checked-button-color: "#d1b277"
+      switch-checked-track-color: "#6b5428"
+      switch-unchecked-color: "#6b6f62"
+      switch-unchecked-button-color: "#8a8d7d"
+      switch-unchecked-track-color: "#3a4036"
+
+      # Sliders
+      slider-color: *d-primary
+      slider-bar-color: "#4a5045"
+      slider-secondary-color: "#6b5428"
+
+      # Inputs, lists, menus
+      input-fill-color: "#2f352c"
+      input-ink-color: *d-text
+      input-label-ink-color: *d-text2
+      input-disabled-ink-color: "#6b6f62"
+      input-idle-line-color: "#4a5045"
+      input-hover-line-color: "#6b6f62"
+      input-dropdown-icon-color: *d-text2
+      paper-listbox-background-color: "#2b3128"
+      paper-item-icon-color: *d-text2
+      paper-item-icon-active-color: *d-primary
+      mdc-theme-primary: *d-primary
+      mdc-theme-secondary: *d-accent
+      mdc-theme-surface: *d-card
+      mdc-theme-on-surface: *d-text
+      mdc-theme-on-primary: "#1c1f1a"
+      mdc-ripple-color: "#b08d4f"
+      mdc-select-fill-color: "#2f352c"
+      mdc-text-field-fill-color: "#2f352c"
+      mdc-select-ink-color: *d-text
+      mdc-text-field-ink-color: *d-text
+
+      # Dialogs
+      mdc-dialog-heading-ink-color: "#d1b277"
+      mdc-dialog-content-ink-color: *d-text
+      dialog-backdrop-filter: "brightness(55%) blur(4px)"
+      ha-dialog-scrim-backdrop-filter: "brightness(55%) blur(4px)"
+      mdc-dialog-scrim-color: "rgba(10,12,9,0.7)"
+
+      # Tables, code, markdown
+      table-header-background-color: "#2f352c"
+      table-row-background-color: *d-card
+      table-row-alternative-background-color: "#2a3028"
+      code-editor-background-color: "#181b16"
+      markdown-code-background-color: "#181b16"
+      codemirror-keyword: "#d6a043"
+      codemirror-operator: "#d0702f"
+      codemirror-variable: "#7fa3b5"
+      codemirror-variable-2: "#7a9a56"
+      codemirror-variable-3: "#9a80b0"
+      codemirror-builtin: "#b08d4f"
+      codemirror-atom: "#9a80b0"
+      codemirror-number: "#d0702f"
+      codemirror-string: "#7a9a56"
+      codemirror-comment: "#6b6f62"
+      codemirror-meta: "#a39d88"
+      codemirror-property: "#e8c46a"
+      codemirror-tag: "#b8523f"
+      codemirror-attribute: "#d6a043"
+      scrollbar-thumb-color: "#4a5045"
+
+      # Energy dashboard
+      energy-solar-color: "#e8c46a"
+      energy-grid-consumption-color: "#7fa3b5"
+      energy-grid-return-color: "#7a9a56"
+      energy-battery-out-color: "#9a80b0"
+      energy-battery-in-color: "#d0702f"
+      energy-gas-color: "#d0702f"
+      energy-water-color: "#7fa3b5"
+
+    # ===================== LIGHT =====================
     light:
-      primary-color: *light-primary
-      accent-color: *light-accent
-      primary-background-color: *light-bg
-      secondary-background-color: *light-card
-      card-background-color: *light-card
-      primary-text-color: *light-text
-      secondary-text-color: *light-text2
-      divider-color: *light-divider
-      app-header-background-color: *light-card
-      app-header-text-color: *light-text
-      sidebar-background-color: *light-bg
-      sidebar-text-color: *light-text2
-      sidebar-selected-text-color: *light-primary
-      sidebar-selected-icon-color: *light-primary
+      # Core
+      primary-color: &l-primary "#7d5f26"           # dark gold
+      dark-primary-color: "#5e4719"
+      light-primary-color: "#a98544"
+      accent-color: &l-accent "#556b3f"             # moss
+      text-primary-color: "#f4eedd"
+      primary-background-color: &l-bg "#e9e2d0"     # parchment
+      secondary-background-color: &l-card "#f4eedd"
+      card-background-color: *l-card
+      primary-text-color: &l-text "#2b2a24"
+      secondary-text-color: &l-text2 "#6b6757"
+      disabled-text-color: "#9c967f"
+      disabled-color: "#bdb597"
+      divider-color: &l-divider "#cbbf9f"
+      outline-color: *l-divider
+      rgb-primary-color: "125, 95, 38"
+      rgb-accent-color: "85, 107, 63"
+      rgb-primary-text-color: "43, 42, 36"
+      rgb-secondary-text-color: "107, 103, 87"
+      rgb-card-background-color: "244, 238, 221"
+      rgb-primary-background-color: "233, 226, 208"
+
+      # Background: aged parchment gradient
+      lovelace-background: "radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed"
+
+      # Cards
+      ha-card-border-color: *l-divider
+      ha-card-box-shadow: "0 2px 8px rgba(80,62,28,0.18), inset 0 1px 0 rgba(255,255,255,0.5)"
+      ha-card-header-color: "#5e4719"
+
+      # Header / toolbar / tabs
+      app-header-background-color: "#ddd5bf"
+      app-header-text-color: *l-text
+      app-header-selection-bar-color: *l-primary
+      paper-tabs-selection-bar-color: *l-primary
+
+      # Sidebar
+      sidebar-background-color: "#ddd5bf"
+      sidebar-icon-color: *l-text2
+      sidebar-text-color: *l-text2
+      sidebar-selected-background-color: "rgba(125,95,38,0.14)"
+      sidebar-selected-icon-color: *l-primary
+      sidebar-selected-text-color: "#5e4719"
+
+      # Semantic
+      error-color: "#9a3b2e"
+      warning-color: "#a97618"
+      success-color: "#55703a"
+      info-color: "#4a7189"
+      label-badge-red: "#9a3b2e"
+      label-badge-green: "#55703a"
+      label-badge-blue: "#4a7189"
+      label-badge-yellow: "#a97618"
+      label-badge-grey: "#9c967f"
+
+      # Entity state colors
+      state-icon-color: *l-text2
+      state-icon-active-color: *l-primary
+      state-icon-unavailable-color: "#9c967f"
+      state-light-active-color: "#c48a12"
+      state-switch-active-color: "#55703a"
+      state-fan-active-color: "#4a7189"
+      state-cover-active-color: "#7d5f26"
+      state-media_player-active-color: "#6c5290"
+      state-lock-locked-color: "#55703a"
+      state-lock-unlocked-color: "#a97618"
+      state-lock-jammed-color: "#9a3b2e"
+      state-climate-heat-color: "#b4571f"
+      state-climate-cool-color: "#4a7189"
+      state-climate-auto-color: "#55703a"
+      state-climate-dry-color: "#a97618"
+      state-climate-fan_only-color: "#4a7189"
+      state-climate-off-color: "#9c967f"
+      state-person-home-color: "#55703a"
+      state-person-zone-color: "#a97618"
+      state-person-not_home-color: "#9c967f"
+      state-binary_sensor-active-color: "#a97618"
+      state-alert-on-color: "#9a3b2e"
+      state-sun-day-color: "#c48a12"
+      state-sun-night-color: "#6c5290"
+
+      # Switches
+      switch-checked-color: *l-primary
+      switch-checked-button-color: "#f4eedd"
+      switch-checked-track-color: "#a98544"
+      switch-unchecked-color: "#9c967f"
+      switch-unchecked-button-color: "#f4eedd"
+      switch-unchecked-track-color: "#bdb597"
+
+      # Sliders
+      slider-color: *l-primary
+      slider-bar-color: "#cbbf9f"
+      slider-secondary-color: "#a98544"
+
+      # Inputs, lists, menus
+      input-fill-color: "#ece4cf"
+      input-ink-color: *l-text
+      input-label-ink-color: *l-text2
+      input-disabled-ink-color: "#9c967f"
+      input-idle-line-color: "#bdb597"
+      input-hover-line-color: "#9c967f"
+      input-dropdown-icon-color: *l-text2
+      paper-listbox-background-color: "#f4eedd"
+      paper-item-icon-color: *l-text2
+      paper-item-icon-active-color: *l-primary
+      mdc-theme-primary: *l-primary
+      mdc-theme-secondary: *l-accent
+      mdc-theme-surface: *l-card
+      mdc-theme-on-surface: *l-text
+      mdc-theme-on-primary: "#f4eedd"
+      mdc-ripple-color: "#7d5f26"
+      mdc-select-fill-color: "#ece4cf"
+      mdc-text-field-fill-color: "#ece4cf"
+      mdc-select-ink-color: *l-text
+      mdc-text-field-ink-color: *l-text
+
+      # Dialogs
+      mdc-dialog-heading-ink-color: "#5e4719"
+      mdc-dialog-content-ink-color: *l-text
+      dialog-backdrop-filter: "brightness(70%) blur(4px)"
+      ha-dialog-scrim-backdrop-filter: "brightness(70%) blur(4px)"
+      mdc-dialog-scrim-color: "rgba(60,48,24,0.55)"
+
+      # Tables, code, markdown
+      table-header-background-color: "#ece4cf"
+      table-row-background-color: *l-card
+      table-row-alternative-background-color: "#efe8d5"
+      code-editor-background-color: "#efe8d5"
+      markdown-code-background-color: "#e2dac4"
+      codemirror-keyword: "#a97618"
+      codemirror-operator: "#b4571f"
+      codemirror-variable: "#4a7189"
+      codemirror-variable-2: "#55703a"
+      codemirror-variable-3: "#6c5290"
+      codemirror-builtin: "#7d5f26"
+      codemirror-atom: "#6c5290"
+      codemirror-number: "#b4571f"
+      codemirror-string: "#55703a"
+      codemirror-comment: "#9c967f"
+      codemirror-meta: "#6b6757"
+      codemirror-property: "#8a6a2f"
+      codemirror-tag: "#9a3b2e"
+      codemirror-attribute: "#a97618"
+      scrollbar-thumb-color: "#bdb597"
+
+      # Energy dashboard
+      energy-solar-color: "#c48a12"
+      energy-grid-consumption-color: "#4a7189"
+      energy-grid-return-color: "#55703a"
+      energy-battery-out-color: "#6c5290"
+      energy-battery-in-color: "#b4571f"
+      energy-gas-color: "#b4571f"
+      energy-water-color: "#4a7189"

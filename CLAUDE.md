@@ -34,9 +34,19 @@ The HA MCP tools in this environment control devices only; do not use them to ed
 |---|---|---|
 | Background | `#1c1f1a` night forest | `#e9e2d0` parchment |
 | Card | `#262b24` mossy stone | `#f4eedd` |
-| Primary | `#b08d4f` aged gold | `#8a6a2f` |
+| Primary | `#b08d4f` aged gold | `#7d5f26` |
 | Accent | `#6f8f5a` moss | `#556b3f` |
 | Text | `#e6dfc9` | `#2b2a24` |
 | Secondary text | `#a39d88` | `#6b6757` |
 | Divider | `#3a4036` | `#cbbf9f` |
-| Error | `#a8483a` ember red | same |
+| Error / red | `#b8523f` ember red | `#9a3b2e` |
+| Warning / amber | `#d6a043` | `#a97618` |
+| Success / green | `#7a9a56` spring moss | `#55703a` |
+| Info / cool | `#7fa3b5` frost | `#4a7189` |
+| Heat | `#d0702f` ember | `#b4571f` |
+| Light on | `#e8c46a` candlelight | `#c48a12` |
+| Arcane (media) | `#9a80b0` | `#6c5290` |
+| Raised surface (inputs, alt rows) | `#2f352c` | `#ece4cf` |
+| Sidebar / header bg | `#161914` / `#20251e` | `#ddd5bf` |
+
+Both modes must define the same set of variables. Fonts are a system serif stack (a theme cannot load web fonts). card-mod ornaments are not used yet.
