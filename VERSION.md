@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.2.0**
+**Current version: 0.2.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.2.1] - 2026-11-15
+- Sharper corners: card 4px, button 3px, dialog 6px, tooltip 3px (was 10/8/14/6).
 
 ### [0.2.0] - 2026-11-15
 - Full theme pass, dark and light (128 variables each).

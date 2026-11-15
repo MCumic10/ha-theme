@@ -16,17 +16,17 @@ Nordic Fantasy:
   ha-card-header-font-size: 20px
   ha-card-header-font-weight: "600"
 
-  # Shape: carved-stone feel, modest rounding with thin borders
-  ha-card-border-radius: 10px
+  # Shape: carved-stone feel, near-square corners with thin borders
+  ha-card-border-radius: 4px
   ha-card-border-width: 1px
-  ha-button-border-radius: 8px
-  ha-dialog-border-radius: 14px
-  ha-bottom-sheet-border-radius: 14px
-  ha-tooltip-border-radius: 6px
-  switch-track-border-radius: 10px
-  mdc-shape-medium: 10px
-  mdc-shape-small: 6px
-  mdc-shape-large: 14px
+  ha-button-border-radius: 3px
+  ha-dialog-border-radius: 6px
+  ha-bottom-sheet-border-radius: 6px
+  ha-tooltip-border-radius: 3px
+  switch-track-border-radius: 4px
+  mdc-shape-medium: 4px
+  mdc-shape-small: 2px
+  mdc-shape-large: 6px
 
   modes:
     # ===================== DARK =====================
