@@ -10,6 +10,7 @@ Custom Home Assistant theme, "Nordic Fantasy": natural, earthy fantasy colors wi
 ## Layout
 ```
 themes/nordic_fantasy.yaml   the theme
+hacs.json                    HACS metadata (theme repo; yaml files must stay in themes/)
 VERSION.md                   current version + changelog + versioning rules
 README.md                    install/usage for humans
 ```
