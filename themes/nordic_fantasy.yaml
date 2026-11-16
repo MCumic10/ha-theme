@@ -102,10 +102,33 @@ Nordic Fantasy:
     .header, app-header {
       border-bottom: 2px solid var(--primary-color);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      background-image:
+        linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.08), transparent),
+        repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px);
+    }
+    /* Active tab: soft pressed-in wash under the gold underline */
+    ha-tab[active] {
+      background-image: linear-gradient(to bottom, transparent, rgba(var(--rgb-primary-color), 0.12));
+    }
+    /* Focus ring: gold instead of the browser default grey (best effort; ha-tab sets no focus style) */
+    ha-tab:focus-visible,
+    ha-tab:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: -2px;
+      border-radius: 3px;
     }
   card-mod-sidebar: |
     :host {
       border-right: 2px solid var(--primary-color);
+      background-image:
+        linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.10), transparent 160px),
+        repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px);
+      box-shadow: inset -8px 0 12px -8px rgba(0, 0, 0, 0.25);
+    }
+    /* Selected item: gold bar on the left edge and a slight engraved inset */
+    ha-list-item-button.selected {
+      box-shadow: inset 3px 0 0 var(--primary-color), inset 0 1px 3px rgba(0, 0, 0, 0.18);
+      border-radius: 4px;
     }
     .title {
       font-variant: small-caps;
@@ -267,7 +290,7 @@ Nordic Fantasy:
       codemirror-property: "#e8c46a"
       codemirror-tag: "#b8523f"
       codemirror-attribute: "#d6a043"
-      scrollbar-thumb-color: "#4a5045"
+      scrollbar-thumb-color: "#6b5428"
 
       # Energy dashboard
       energy-solar-color: "#e8c46a"
@@ -446,7 +469,7 @@ Nordic Fantasy:
       codemirror-property: "#8a6a2f"
       codemirror-tag: "#9a3b2e"
       codemirror-attribute: "#a97618"
-      scrollbar-thumb-color: "#bdb597"
+      scrollbar-thumb-color: "#a98544"
 
       # Energy dashboard
       energy-solar-color: "#c48a12"

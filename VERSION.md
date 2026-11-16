@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.7.1**
+**Current version: 0.8.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.8.0] - 2026-11-16
+- Header and sidebar (card-mod): subtle gold top tint and laid lines, inset edge shadow on the sidebar, selected sidebar item gets a gold left bar and engraved inset, active tab gets a pressed-in wash.
+- Focus ring on dashboard tabs recolored gold (best effort).
+- Scrollbar thumbs recolored to gold-brown tones (dark `#6b5428`, light `#a98544`).
 
 ### [0.7.1] - 2026-11-16
 - Fix: white input fields (e.g. time pickers). HA form backgrounds/surfaces/text read `--ha-color-neutral-NN`; overridden with a warm parchment/forest grey ramp (shared, both modes). Two shades added to the palette table.
