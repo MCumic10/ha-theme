@@ -164,6 +164,7 @@ Nordic Fantasy:
       switch-checked-color: *d-primary
       switch-checked-button-color: "#d1b277"
       switch-checked-track-color: "#6b5428"
+      ha-switch-checked-border-color: *d-primary
       switch-unchecked-color: "#6b6f62"
       switch-unchecked-button-color: "#8a8d7d"
       switch-unchecked-track-color: "#3a4036"
@@ -354,6 +355,7 @@ Nordic Fantasy:
       switch-checked-color: *l-primary
       switch-checked-button-color: "#f4eedd"
       switch-checked-track-color: "#a98544"
+      ha-switch-checked-border-color: *l-primary
       switch-unchecked-color: "#9c967f"
       switch-unchecked-button-color: "#f4eedd"
       switch-unchecked-track-color: "#bdb597"

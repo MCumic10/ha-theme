@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.6.1**
+**Current version: 0.6.2**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.6.2] - 2026-11-16
+- Fix: toggles showed HA default blue; set `ha-switch-checked-border-color` to the primary gold in both modes.
 
 ### [0.6.1] - 2026-11-16
 - Corner brackets thinner: 1px strokes (was 2px), sitting exactly on the inner hairline.
