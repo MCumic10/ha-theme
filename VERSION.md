@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.4.2**
+**Current version: 0.5.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.5.0] - 2026-11-16
+- card-mod: gold corner brackets on cards (overlay on the double frame, click-through) and card titles get a gold rule fading out to the right.
 
 ### [0.4.2] - 2026-11-16
 - Fix: seams were still visible. Dropped all SVG noise; the light texture is now pure CSS gradients (soft blotches, faint laid-paper lines, vignette) that cannot tile or seam.
