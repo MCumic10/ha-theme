@@ -28,6 +28,20 @@ Nordic Fantasy:
   mdc-shape-small: 2px
   mdc-shape-large: 6px
 
+  # HA design-token scale: buttons, switches and other "primary" fills derive from --ha-color-primary-NN
+  # (default blue). Gold ramp, dark to light; same in both modes (HA picks the index per mode).
+  ha-color-primary-05: "#2a2418"
+  ha-color-primary-10: "#362d1c"
+  ha-color-primary-20: "#4a3b1f"
+  ha-color-primary-30: "#5e4719"
+  ha-color-primary-40: "#7d5f26"
+  ha-color-primary-50: "#a98544"
+  ha-color-primary-60: "#b08d4f"
+  ha-color-primary-70: "#d1b277"
+  ha-color-primary-80: "#ddd5bf"
+  ha-color-primary-90: "#e9e2d0"
+  ha-color-primary-95: "#f4eedd"
+
   # ================= card-mod (requires card-mod from HACS) =================
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.

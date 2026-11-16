@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.6.3**
+**Current version: 0.7.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.7.0] - 2026-11-16
+- HA design-token scale: `ha-color-primary-05..95` overridden with a gold ramp (shared, both modes), so buttons, switches and other primary fills stop being HA blue. Three new dark ramp shades added to the palette table.
 
 ### [0.6.3] - 2026-11-16
 - Fix: bold black halo on chart labels (energy flow sankey, graphs). HA reads `--ha-card-background` as a plain color (label outline + chart background), so the layered gradient from 0.4.0 broke it. `ha-card-background` is a plain color again in both modes.
