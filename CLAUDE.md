@@ -32,23 +32,23 @@ The HA MCP tools in this environment control devices only; do not use them to ed
 ## Palette
 | Role | Dark | Light |
 |---|---|---|
-| Background | `#1a1511` hearth-black | `#e9e2d0` parchment |
-| Card | `#251e18` dark umber | `#f4eedd` |
-| Primary | `#d08a3c` ember amber | `#7d5f26` |
-| Accent | `#8a9a5b` moss | `#556b3f` |
-| Text | `#eadfcc` | `#2b2a24` |
-| Secondary text | `#a99c87` | `#6b6757` |
-| Divider | `#3a3027` | `#cbbf9f` |
+| Background | `#12171c` slate-black | `#e9e2d0` parchment |
+| Card | `#1b222a` dark slate | `#f4eedd` |
+| Primary | `#8fb3c9` frost | `#7d5f26` |
+| Accent | `#c9a15a` gold | `#556b3f` |
+| Text | `#dde5ea` | `#2b2a24` |
+| Secondary text | `#93a0ab` | `#6b6757` |
+| Divider | `#2b353f` | `#cbbf9f` |
 | Error / red | `#e0705a` ember red | `#9a3b2e` |
-| Warning / amber | `#d6a043` | `#a97618` |
-| Success / green | `#7a9a56` spring moss | `#55703a` |
-| Info / cool | `#7fa3b5` frost | `#4a7189` |
-| Heat | `#d0702f` ember | `#b4571f` |
+| Warning / amber | `#e2b24a` | `#a97618` |
+| Success / green | `#86a65f` spring moss | `#55703a` |
+| Info / cool | `#6db3d6` frost | `#4a7189` |
+| Heat | `#e4672c` ember | `#b4571f` |
 | Light on | `#e8c46a` candlelight | `#c48a12` |
-| Arcane (media) | `#9a80b0` | `#6c5290` |
-| Raised surface (inputs, alt rows) | `#2f261e` | `#ece4cf` |
-| Sidebar / header bg | `#130f0c` / `#1f1913` | `#ddd5bf` |
-| Gold ramp (HA `ha-color-primary-NN`, shared) | 05 `#2a2418`, 10 `#362d1c`, 20 `#4a3b1f`, 30 `#5e4719`, 40 `#7d5f26`, 50 `#a98544`, 60 `#b08d4f`, 70 `#d1b277`, 80 `#ddd5bf`, 90 `#e9e2d0`, 95 `#f4eedd` | same |
-| Neutral ramp (HA `ha-color-neutral-NN`) | 05 `#1a1511`, 10 `#251e18`, 20 `#2f261e`, 30 `#3a3027`, 40 `#4a3f33`, 50 `#6f6354`, 60 `#7e7261`, 70 `#8f836f`, 80 `#a99c87`, 90 `#cfc3ad`, 95 `#eadfcc` | 05 `#1c1f1a`, 10 `#262b24`, 20 `#2f352c`, 30 `#3a4036`, 40 `#4a5045`, 50 `#6b6757`, 60 `#a39d88`, 70 `#bdb597`, 80 `#cbbf9f`, 90 `#ddd5bf`, 95 `#ece4cf` |
+| Arcane (media) | `#a98cc0` | `#6c5290` |
+| Raised surface (inputs, alt rows) | `#232c36` | `#ece4cf` |
+| Sidebar / header bg | `#0d1217` / `#161d24` | `#ddd5bf` |
+| Primary ramp (HA `ha-color-primary-NN`) | 05 `#0f1a22`, 10 `#16242e`, 20 `#1f3441`, 30 `#2b4658`, 40 `#3f6379`, 50 `#5f8199`, 60 `#8fb3c9`, 70 `#b5d0e0`, 80 `#cfe0ea`, 90 `#e3edf3`, 95 `#f1f6f9` | gold: 05 `#2a2418`, 10 `#362d1c`, 20 `#4a3b1f`, 30 `#5e4719`, 40 `#7d5f26`, 50 `#a98544`, 60 `#b08d4f`, 70 `#d1b277`, 80 `#ddd5bf`, 90 `#e9e2d0`, 95 `#f4eedd` |
+| Neutral ramp (HA `ha-color-neutral-NN`) | 05 `#12171c`, 10 `#1b222a`, 20 `#232c36`, 30 `#2b353f`, 40 `#404c57`, 50 `#677582`, 60 `#738190`, 70 `#82909c`, 80 `#93a0ab`, 90 `#c3ced6`, 95 `#dde5ea` | 05 `#1c1f1a`, 10 `#262b24`, 20 `#2f352c`, 30 `#3a4036`, 40 `#4a5045`, 50 `#6b6757`, 60 `#a39d88`, 70 `#bdb597`, 80 `#cbbf9f`, 90 `#ddd5bf`, 95 `#ece4cf` |
 
 Both modes must define the same set of variables. Fonts are a system serif stack (a theme cannot load web fonts). card-mod ornaments live in the shared `card-mod-*` keys of the theme (use only theme variables so both modes work; ignored without card-mod).

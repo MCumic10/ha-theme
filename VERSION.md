@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.12.0**
+**Current version: 0.13.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,12 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.13.0] - 2026-11-16
+- Dark palette changed to "Winterhold": cold slate night (`#12171c`, cards `#1b222a`), frost-blue primary `#8fb3c9`, gold accent `#c9a15a`. Earlier dark palettes: Blackreach in tag v0.11.0, Embers of Whiterun in tag v0.12.0. Light theme unchanged.
+- `ha-color-primary-NN` is now defined per mode (frost-blue ramp in dark, gold ramp in light) so primary fills match each mode.
+- Dark info color moved to `#6db3d6` so it stays distinct from the frost primary; cool/fan states keep `#7fa3b5`.
+- Palette table in CLAUDE.md re-synced (dark semantic colors had drifted since 0.12.0).
 
 ### [0.12.0] - 2026-11-16
 - Dark palette changed from "Blackreach" (still available in tag v0.11.0) to "Embers of Whiterun": warm hearth-black `#1a1511`, umber cards `#251e18`, ember-amber primary `#d08a3c`, moss accent `#8a9a5b`. Light theme unchanged.
