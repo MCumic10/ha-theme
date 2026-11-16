@@ -242,19 +242,20 @@ Nordic Fantasy:
       rgb-card-background-color: "244, 238, 221"
       rgb-primary-background-color: "233, 226, 208"
 
-      # Background: aged parchment gradient
-      # Layers (top to bottom): edge vignette, paper grain, large aged mottling, base gradient.
-      # Grain/mottling are inline SVG noise, alpha kept low (< ~6%) so text contrast is unaffected.
+      # Layers (top to bottom): edge vignette, soft aged blotches, faint laid-paper lines, base gradient.
+      # Pure CSS gradients (no SVG noise: noise textures showed tile seams). Alpha stays low for text contrast.
       lovelace-background: >-
         radial-gradient(ellipse at center, transparent 55%, rgba(110, 85, 40, 0.16) 100%) fixed,
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.12 0 0 0 0.10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat,
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.008' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.33 0 0 0 0 0.13 0 0 0 0.25 -0.06'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat,
+        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(150, 115, 55, 0.07), transparent 70%) fixed,
+        radial-gradient(ellipse 50% 45% at 85% 70%, rgba(150, 115, 55, 0.06), transparent 70%) fixed,
+        radial-gradient(ellipse 40% 30% at 55% 95%, rgba(120, 90, 40, 0.05), transparent 70%) fixed,
+        repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.025) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed
 
-      # Cards: parchment sheet = top gold tint + fine grain over the card color
+      # Cards: parchment sheet = top gold tint + faint laid lines over the card color
       ha-card-background: >-
         linear-gradient(to bottom, rgba(125, 95, 38, 0.08), transparent 70px),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.12 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat,
+        repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.02) 0 1px, transparent 1px 4px),
         #f4eedd
       ha-card-border-color: *l-divider
       # Layers: drop shadow, inner gold hairline framed 3px in (double rule), soft aged inner edge

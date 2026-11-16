@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.4.1**
+**Current version: 0.4.2**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.4.2] - 2026-11-16
+- Fix: seams were still visible. Dropped all SVG noise; the light texture is now pure CSS gradients (soft blotches, faint laid-paper lines, vignette) that cannot tile or seam.
 
 ### [0.4.1] - 2026-11-16
 - Fix: visible seams between parchment texture tiles. Grain and mottling are now rendered once at full size (no tiling, no `stitchTiles`) instead of repeating 200px/600px tiles.
