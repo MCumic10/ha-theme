@@ -42,6 +42,20 @@ Nordic Fantasy:
   ha-color-primary-90: "#e9e2d0"
   ha-color-primary-95: "#f4eedd"
 
+  # HA neutral scale (greys): light mode uses 95 for form fields/surfaces and 05 for text; dark mode uses
+  # 05/10 for surfaces and 95 for text. Warm parchment/forest ramp so inputs stop being white.
+  ha-color-neutral-05: "#1c1f1a"
+  ha-color-neutral-10: "#262b24"
+  ha-color-neutral-20: "#2f352c"
+  ha-color-neutral-30: "#3a4036"
+  ha-color-neutral-40: "#4a5045"
+  ha-color-neutral-50: "#6b6757"
+  ha-color-neutral-60: "#a39d88"
+  ha-color-neutral-70: "#bdb597"
+  ha-color-neutral-80: "#cbbf9f"
+  ha-color-neutral-90: "#ddd5bf"
+  ha-color-neutral-95: "#ece4cf"
+
   # ================= card-mod (requires card-mod from HACS) =================
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.

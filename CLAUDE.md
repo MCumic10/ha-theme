@@ -49,5 +49,6 @@ The HA MCP tools in this environment control devices only; do not use them to ed
 | Raised surface (inputs, alt rows) | `#2f352c` | `#ece4cf` |
 | Sidebar / header bg | `#161914` / `#20251e` | `#ddd5bf` |
 | Gold ramp (HA `ha-color-primary-NN`, both modes) | 05 `#2a2418`, 10 `#362d1c`, 20 `#4a3b1f`, 30 `#5e4719`, 40 `#7d5f26`, 50 `#a98544`, 60 `#b08d4f`, 70 `#d1b277`, 80 `#ddd5bf`, 90 `#e9e2d0`, 95 `#f4eedd` | same |
+| Neutral ramp (HA `ha-color-neutral-NN`, both modes) | 05 `#1c1f1a`, 10 `#262b24`, 20 `#2f352c`, 30 `#3a4036`, 40 `#4a5045`, 50 `#6b6757`, 60 `#a39d88`, 70 `#bdb597`, 80 `#cbbf9f`, 90 `#ddd5bf`, 95 `#ece4cf` | same |
 
 Both modes must define the same set of variables. Fonts are a system serif stack (a theme cannot load web fonts). card-mod ornaments live in the shared `card-mod-*` keys of the theme (use only theme variables so both modes work; ignored without card-mod).

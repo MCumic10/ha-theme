@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.7.0**
+**Current version: 0.7.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.7.1] - 2026-11-16
+- Fix: white input fields (e.g. time pickers). HA form backgrounds/surfaces/text read `--ha-color-neutral-NN`; overridden with a warm parchment/forest grey ramp (shared, both modes). Two shades added to the palette table.
 
 ### [0.7.0] - 2026-11-16
 - HA design-token scale: `ha-color-primary-05..95` overridden with a gold ramp (shared, both modes), so buttons, switches and other primary fills stop being HA blue. Three new dark ramp shades added to the palette table.
