@@ -22,7 +22,4 @@ Natural, earthy fantasy theme for Home Assistant, loosely inspired by the Elder 
 
 Optional: install [card-mod](https://github.com/thomasloven/lovelace-card-mod) from HACS for the ornamental card, header and sidebar styling. The theme works without it.
 
-## Upgrading from "Nordic Fantasy" (before 1.0.0)
-The theme was renamed. After updating, select **Winterhold** in your profile, and delete any old `nordic_fantasy.yaml` left in `/config/themes/` (a leftover copy shows up as a second theme).
-
 See [VERSION.md](VERSION.md) for the changelog.
