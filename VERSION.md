@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.11.0**
+**Current version: 0.12.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.12.0] - 2026-11-16
+- Dark palette changed from "Blackreach" (still available in tag v0.11.0) to "Embers of Whiterun": warm hearth-black `#1a1511`, umber cards `#251e18`, ember-amber primary `#d08a3c`, moss accent `#8a9a5b`. Light theme unchanged.
+- Dark semantic colors retuned so they stay distinct from the amber primary: error `#e0705a`, heat `#e4672c`, warning `#e2b24a`, success `#86a65f`, arcane `#a98cc0` (all >= 4.7:1 on cards).
+- Dark neutral ramp re-tinted warm.
 
 ### [0.11.0] - 2026-11-16
 - Dark palette replaced: "Blackreach" (deep teal-black `#111716`, slate-teal cards `#1a2321`, bronze primary `#c9a45c`, teal accent `#5fa39b`). Light theme unchanged.
