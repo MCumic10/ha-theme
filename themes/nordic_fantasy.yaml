@@ -32,26 +32,6 @@ Nordic Fantasy:
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
   card-mod-card: |
-    ha-card {
-      border-top: 2px solid var(--primary-color);
-    }
-    /* Corner brackets: 8 short gold strokes (2px x 14px) drawn as one overlay, clicks pass through */
-    ha-card::before {
-      content: "";
-      position: absolute;
-      inset: 3px;
-      pointer-events: none;
-      z-index: 1;
-      background:
-        linear-gradient(var(--primary-color), var(--primary-color)) top left / 14px 2px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top left / 2px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top right / 14px 2px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top right / 2px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 14px 2px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 2px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 14px 2px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 2px 14px no-repeat;
-    }
     /* Card titles: small caps + gold rule that fades out to the right */
     .card-header {
       font-variant: small-caps;
@@ -110,7 +90,7 @@ Nordic Fantasy:
       lovelace-background: "radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed"
 
       # Cards (same top tint as before, now via variable so light mode can layer grain)
-      ha-card-background: "linear-gradient(to bottom, rgba(176, 141, 79, 0.08), transparent 70px), #262b24"
+      ha-card-background: "linear-gradient(#b08d4f, #b08d4f) top left / 100% 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px top 3px / 14px 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px top 3px / 2px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px top 3px / 14px 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px top 3px / 2px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px bottom 3px / 14px 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px bottom 3px / 2px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px bottom 3px / 14px 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px bottom 3px / 2px 14px no-repeat, linear-gradient(to bottom, rgba(176, 141, 79, 0.08), transparent 70px), #262b24"
       ha-card-border-color: *d-divider
       ha-card-box-shadow: "0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(230,223,201,0.04)"
       ha-card-header-color: "#d1b277"
@@ -274,7 +254,17 @@ Nordic Fantasy:
         radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed
 
       # Cards: parchment sheet = top gold tint + faint laid lines over the card color
+      # Gold top rule + 8 corner-bracket strokes (2px x 14px, 3px in) drawn as background layers
       ha-card-background: >-
+        linear-gradient(#7d5f26, #7d5f26) top left / 100% 2px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) left 3px top 3px / 14px 2px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) left 3px top 3px / 2px 14px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) right 3px top 3px / 14px 2px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) right 3px top 3px / 2px 14px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) left 3px bottom 3px / 14px 2px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) left 3px bottom 3px / 2px 14px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) right 3px bottom 3px / 14px 2px no-repeat,
+        linear-gradient(#7d5f26, #7d5f26) right 3px bottom 3px / 2px 14px no-repeat,
         linear-gradient(to bottom, rgba(125, 95, 38, 0.08), transparent 70px),
         repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.02) 0 1px, transparent 1px 4px),
         #f4eedd

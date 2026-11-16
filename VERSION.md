@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.5.0**
+**Current version: 0.5.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.5.1] - 2026-11-16
+- Fix: card-mod `card-mod-card` did not reach `ha-card`, so the gold top rule and corner brackets never showed. They are now background layers in `ha-card-background` (both modes). The title rule stays in card-mod.
 
 ### [0.5.0] - 2026-11-16
 - card-mod: gold corner brackets on cards (overlay on the double frame, click-through) and card titles get a gold rule fading out to the right.
