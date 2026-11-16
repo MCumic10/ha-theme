@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.3.0**
+**Current version: 0.3.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.3.1] - 2026-11-16
+- card-mod: picture-elements state labels get a near-invisible, tight plaque (gold hairline, serif text) that brightens with a candlelight glow on hover.
 
 ### [0.3.0] - 2026-11-15
 - card-mod ornaments (optional, needs card-mod): gold top rule and soft gold glow on cards, small-caps spaced card titles, gold rule under dashboard header, sidebar edge and small-caps title, framed more-info dialogs.

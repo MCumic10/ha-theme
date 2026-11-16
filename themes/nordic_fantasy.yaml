@@ -40,6 +40,28 @@ Nordic Fantasy:
       font-variant: small-caps;
       letter-spacing: 0.08em;
     }
+    /* picture-elements state labels: near-invisible plaque, lights up on hover.
+       Fixed dark-palette colors on purpose: floorplan images do not change with light/dark mode. */
+    hui-state-label-element,
+    ::slotted(hui-state-label-element) {
+      background-color: rgba(28, 31, 26, 0.2);
+      color: #e6dfc9;
+      border: 1px solid rgba(176, 141, 79, 0.2);
+      border-radius: 2px;
+      padding: 0;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(2px);
+      transition: background-color 0.25s ease, border-color 0.25s ease,
+                  box-shadow 0.25s ease, color 0.25s ease;
+    }
+    hui-state-label-element:hover,
+    ::slotted(hui-state-label-element:hover) {
+      background-color: rgba(28, 31, 26, 0.9);
+      border-color: #e8c46a;
+      color: #f4eedd;
+      box-shadow: 0 0 8px rgba(232, 196, 106, 0.45), 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
   card-mod-root: |
     .header, app-header {
       border-bottom: 2px solid var(--primary-color);
