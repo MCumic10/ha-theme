@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.9.0**
+**Current version: 0.10.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.10.0] - 2026-11-16
+- Dark mode parity with light: dashboard background gets the same layered structure (vignette, faint moss/gold blotches, faint lines) in forest tones; cards get the double gold frame (outer border + inner hairline 3px in) and soft inner edge.
+- Removed the card-mod `ha-card` background rule (corner brackets, top tint, laid lines): it never rendered in practice. Corner brackets are dropped for good; the gold top rule and frame stay in `ha-card-box-shadow`.
+- Verified dark and light define the same 140 variables.
 
 ### [0.9.0] - 2026-11-16
 - Entity state accents on tile cards (card-mod): active icons glow in their state color, lights glow stronger (candlelight), heating climate icons pulse softly in ember (disabled with prefers-reduced-motion).

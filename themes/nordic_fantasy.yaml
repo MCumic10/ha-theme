@@ -60,22 +60,6 @@ Nordic Fantasy:
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
   card-mod-card: |
-    /* Card decoration (needs card-mod to reach ha-card): corner brackets, top tint, laid lines.
-       Not in --ha-card-background on purpose: charts read that variable as a color. */
-    ha-card {
-      background:
-        linear-gradient(var(--primary-color), var(--primary-color)) left 3px top 3px / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) left 3px top 3px / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) right 3px top 3px / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) right 3px top 3px / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) left 3px bottom 3px / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) left 3px bottom 3px / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) right 3px bottom 3px / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) right 3px bottom 3px / 1px 14px no-repeat,
-        linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.08), transparent 70px),
-        repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px),
-        var(--card-background-color);
-    }
     /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
        active icons glow in their state color (candlelight lights, ember heat, frost cooling, moss switches) */
     ha-card.active ha-tile-icon {
@@ -187,12 +171,21 @@ Nordic Fantasy:
       rgb-primary-background-color: "28, 31, 26"
 
       # Background: soft forest-light gradient behind dashboards
-      lovelace-background: "radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed"
+      # Layers (top to bottom): edge vignette, faint moss/gold blotches, faint lines, base gradient.
+      # Pure CSS gradients, same structure as light mode.
+      lovelace-background: >-
+        radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.35) 100%) fixed,
+        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(111, 143, 90, 0.07), transparent 70%) fixed,
+        radial-gradient(ellipse 50% 45% at 85% 70%, rgba(176, 141, 79, 0.05), transparent 70%) fixed,
+        radial-gradient(ellipse 40% 30% at 55% 95%, rgba(111, 143, 90, 0.05), transparent 70%) fixed,
+        repeating-linear-gradient(0deg, rgba(230, 223, 201, 0.02) 0 1px, transparent 1px 4px) fixed,
+        radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed
 
-      # Cards (same top tint as before, now via variable so light mode can layer grain)
+      # Cards: ha-card-background MUST stay a plain color (HA charts read it as a color).
+      # Layers: gold top rule, drop shadow, inner gold hairline 3px in (double rule), soft dark inner edge
       ha-card-background: "#262b24"
       ha-card-border-color: *d-divider
-      ha-card-box-shadow: "inset 0 2px 0 0 #b08d4f, 0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(230,223,201,0.04)"
+      ha-card-box-shadow: "inset 0 2px 0 0 #b08d4f, 0 3px 10px rgba(0,0,0,0.45), inset 0 0 0 3px #262b24, inset 0 0 0 4px rgba(176,141,79,0.35), inset 0 0 22px rgba(0,0,0,0.25)"
       ha-card-header-color: "#d1b277"
 
       # Header / toolbar / tabs
