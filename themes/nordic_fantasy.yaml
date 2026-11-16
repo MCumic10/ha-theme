@@ -32,6 +32,20 @@ Nordic Fantasy:
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
   card-mod-card: |
+    /* Hover: card border lights up gold; entity rows get a faint gold wash */
+    ha-card {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    ha-card:hover {
+      border-color: var(--primary-color);
+    }
+    /* Row dividers: gold hairline fading out at both ends (entities-style cards) */
+    #states > *:not(:last-child) {
+      background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.45), transparent) bottom / 100% 1px no-repeat;
+    }
+    #states > *:hover {
+      background-color: rgba(var(--rgb-primary-color), 0.07);
+    }
     /* Card titles: small caps + gold rule that fades out to the right */
     .card-header {
       font-variant: small-caps;
@@ -219,6 +233,18 @@ Nordic Fantasy:
       energy-gas-color: "#d0702f"
       energy-water-color: "#7fa3b5"
 
+      # History/line graph series: palette colors (frost, ember, moss, arcane, amber, red, gold, ...)
+      graph-color-1: "#7fa3b5"
+      graph-color-2: "#d0702f"
+      graph-color-3: "#7a9a56"
+      graph-color-4: "#9a80b0"
+      graph-color-5: "#d6a043"
+      graph-color-6: "#b8523f"
+      graph-color-7: "#b08d4f"
+      graph-color-8: "#a39d88"
+      graph-color-9: "#6f8f5a"
+      graph-color-10: "#e8c46a"
+
     # ===================== LIGHT =====================
     light:
       # Core
@@ -396,3 +422,15 @@ Nordic Fantasy:
       energy-battery-in-color: "#b4571f"
       energy-gas-color: "#b4571f"
       energy-water-color: "#4a7189"
+
+      # History/line graph series: palette colors (frost, ember, moss, arcane, amber, red, gold, ...)
+      graph-color-1: "#4a7189"
+      graph-color-2: "#b4571f"
+      graph-color-3: "#55703a"
+      graph-color-4: "#6c5290"
+      graph-color-5: "#a97618"
+      graph-color-6: "#9a3b2e"
+      graph-color-7: "#7d5f26"
+      graph-color-8: "#6b6757"
+      graph-color-9: "#556b3f"
+      graph-color-10: "#c48a12"

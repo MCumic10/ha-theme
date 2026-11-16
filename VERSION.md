@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.5.1**
+**Current version: 0.6.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,10 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.6.0] - 2026-11-16
+- Graph series colors: `graph-color-1..10` use palette colors in both modes (history graphs no longer default blue/yellow/red/teal).
+- card-mod (best effort, needs card-mod): gold card border on hover, gold hairline dividers between entity rows (fading at both ends), faint gold wash on row hover.
 
 ### [0.5.1] - 2026-11-16
 - Fix: card-mod `card-mod-card` did not reach `ha-card`, so the gold top rule and corner brackets never showed. They are now background layers in `ha-card-background` (both modes). The title rule stays in card-mod.
