@@ -32,6 +32,22 @@ Nordic Fantasy:
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
   card-mod-card: |
+    /* Card decoration (needs card-mod to reach ha-card): corner brackets, top tint, laid lines.
+       Not in --ha-card-background on purpose: charts read that variable as a color. */
+    ha-card {
+      background:
+        linear-gradient(var(--primary-color), var(--primary-color)) left 3px top 3px / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) left 3px top 3px / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) right 3px top 3px / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) right 3px top 3px / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) left 3px bottom 3px / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) left 3px bottom 3px / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) right 3px bottom 3px / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) right 3px bottom 3px / 1px 14px no-repeat,
+        linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.08), transparent 70px),
+        repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px),
+        var(--card-background-color);
+    }
     /* Hover: card border lights up gold; entity rows get a faint gold wash */
     ha-card {
       transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -104,9 +120,9 @@ Nordic Fantasy:
       lovelace-background: "radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed"
 
       # Cards (same top tint as before, now via variable so light mode can layer grain)
-      ha-card-background: "linear-gradient(#b08d4f, #b08d4f) top left / 100% 2px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px top 3px / 14px 1px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px top 3px / 1px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px top 3px / 14px 1px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px top 3px / 1px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px bottom 3px / 14px 1px no-repeat, linear-gradient(#b08d4f, #b08d4f) left 3px bottom 3px / 1px 14px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px bottom 3px / 14px 1px no-repeat, linear-gradient(#b08d4f, #b08d4f) right 3px bottom 3px / 1px 14px no-repeat, linear-gradient(to bottom, rgba(176, 141, 79, 0.08), transparent 70px), #262b24"
+      ha-card-background: "#262b24"
       ha-card-border-color: *d-divider
-      ha-card-box-shadow: "0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(230,223,201,0.04)"
+      ha-card-box-shadow: "inset 0 2px 0 0 #b08d4f, 0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(230,223,201,0.04)"
       ha-card-header-color: "#d1b277"
 
       # Header / toolbar / tabs
@@ -280,24 +296,12 @@ Nordic Fantasy:
         repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.025) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed
 
-      # Cards: parchment sheet = top gold tint + faint laid lines over the card color
-      # Gold top rule + 8 corner-bracket strokes (1px x 14px, 3px in) drawn as background layers
-      ha-card-background: >-
-        linear-gradient(#7d5f26, #7d5f26) top left / 100% 2px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) left 3px top 3px / 14px 1px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) left 3px top 3px / 1px 14px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) right 3px top 3px / 14px 1px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) right 3px top 3px / 1px 14px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) left 3px bottom 3px / 14px 1px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) left 3px bottom 3px / 1px 14px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) right 3px bottom 3px / 14px 1px no-repeat,
-        linear-gradient(#7d5f26, #7d5f26) right 3px bottom 3px / 1px 14px no-repeat,
-        linear-gradient(to bottom, rgba(125, 95, 38, 0.08), transparent 70px),
-        repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.02) 0 1px, transparent 1px 4px),
-        #f4eedd
+      # Cards: MUST stay a plain color. HA charts read --ha-card-background as a color (label outline)
+      # and as their own background; gradients here break chart labels. Decor lives in box-shadow + card-mod.
+      ha-card-background: "#f4eedd"
       ha-card-border-color: *l-divider
-      # Layers: drop shadow, inner gold hairline framed 3px in (double rule), soft aged inner edge
-      ha-card-box-shadow: "0 2px 8px rgba(80,62,28,0.18), inset 0 0 0 3px #f4eedd, inset 0 0 0 4px rgba(125,95,38,0.35), inset 0 0 22px rgba(125,95,38,0.12)"
+      # Layers: gold top rule, drop shadow, inner gold hairline framed 3px in (double rule), soft aged inner edge
+      ha-card-box-shadow: "inset 0 2px 0 0 #7d5f26, 0 2px 8px rgba(80,62,28,0.18), inset 0 0 0 3px #f4eedd, inset 0 0 0 4px rgba(125,95,38,0.35), inset 0 0 22px rgba(125,95,38,0.12)"
       ha-card-header-color: "#5e4719"
 
       # Header / toolbar / tabs

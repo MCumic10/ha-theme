@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.6.2**
+**Current version: 0.6.3**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,10 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.6.3] - 2026-11-16
+- Fix: bold black halo on chart labels (energy flow sankey, graphs). HA reads `--ha-card-background` as a plain color (label outline + chart background), so the layered gradient from 0.4.0 broke it. `ha-card-background` is a plain color again in both modes.
+- Gold top rule moved into `ha-card-box-shadow` (reliable). Corner brackets, top tint and laid lines moved to `card-mod-card` (best effort; needs card-mod to reach `ha-card`).
 
 ### [0.6.2] - 2026-11-16
 - Fix: toggles showed HA default blue; set `ha-switch-checked-border-color` to the primary gold in both modes.
