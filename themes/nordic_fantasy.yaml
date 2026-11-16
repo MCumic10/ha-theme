@@ -76,6 +76,25 @@ Nordic Fantasy:
         repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px),
         var(--card-background-color);
     }
+    /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
+       active icons glow in their state color (candlelight lights, ember heat, frost cooling, moss switches) */
+    ha-card.active ha-tile-icon {
+      filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tile-color) 55%, transparent));
+      transition: filter 0.3s ease;
+    }
+    ha-tile-icon[data-domain="light"][data-state="on"] {
+      filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent));
+    }
+    /* Heating climate: slow ember pulse (skipped when the user prefers reduced motion) */
+    @keyframes nf-ember-pulse {
+      0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 45%, transparent)); }
+      50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 85%, transparent)); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      ha-tile-icon[data-domain="climate"][data-state="heat"] {
+        animation: nf-ember-pulse 3s ease-in-out infinite;
+      }
+    }
     /* Hover: card border lights up gold; entity rows get a faint gold wash */
     ha-card {
       transition: border-color 0.25s ease, box-shadow 0.25s ease;

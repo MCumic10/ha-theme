@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.8.0**
+**Current version: 0.9.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.9.0] - 2026-11-16
+- Entity state accents on tile cards (card-mod): active icons glow in their state color, lights glow stronger (candlelight), heating climate icons pulse softly in ember (disabled with prefers-reduced-motion).
 
 ### [0.8.0] - 2026-11-16
 - Header and sidebar (card-mod): subtle gold top tint and laid lines, inset edge shadow on the sidebar, selected sidebar item gets a gold left bar and engraved inset, active tab gets a pressed-in wash.
