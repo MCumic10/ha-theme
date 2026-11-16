@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.10.0**
+**Current version: 0.11.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,12 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.11.0] - 2026-11-16
+- Dark palette replaced: "Blackreach" (deep teal-black `#111716`, slate-teal cards `#1a2321`, bronze primary `#c9a45c`, teal accent `#5fa39b`). Light theme unchanged.
+- Dark error red brightened to `#d96c55` (4.8:1 on cards, was 3.3:1 against the new card color).
+- `ha-color-neutral-NN` is now defined per mode (teal ramp in dark, parchment ramp in light) instead of shared.
+- Palette table in CLAUDE.md updated for dark.
 
 ### [0.10.0] - 2026-11-16
 - Dark mode parity with light: dashboard background gets the same layered structure (vignette, faint moss/gold blotches, faint lines) in forest tones; cards get the double gold frame (outer border + inner hairline 3px in) and soft inner edge.

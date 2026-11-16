@@ -42,20 +42,6 @@ Nordic Fantasy:
   ha-color-primary-90: "#e9e2d0"
   ha-color-primary-95: "#f4eedd"
 
-  # HA neutral scale (greys): light mode uses 95 for form fields/surfaces and 05 for text; dark mode uses
-  # 05/10 for surfaces and 95 for text. Warm parchment/forest ramp so inputs stop being white.
-  ha-color-neutral-05: "#1c1f1a"
-  ha-color-neutral-10: "#262b24"
-  ha-color-neutral-20: "#2f352c"
-  ha-color-neutral-30: "#3a4036"
-  ha-color-neutral-40: "#4a5045"
-  ha-color-neutral-50: "#6b6757"
-  ha-color-neutral-60: "#a39d88"
-  ha-color-neutral-70: "#bdb597"
-  ha-color-neutral-80: "#cbbf9f"
-  ha-color-neutral-90: "#ddd5bf"
-  ha-color-neutral-95: "#ece4cf"
-
   # ================= card-mod (requires card-mod from HACS) =================
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
@@ -149,160 +135,173 @@ Nordic Fantasy:
     # ===================== DARK =====================
     dark:
       # Core
-      primary-color: &d-primary "#b08d4f"           # aged gold
-      dark-primary-color: "#8a6a2f"
-      light-primary-color: "#d1b277"
-      accent-color: &d-accent "#6f8f5a"             # moss
-      text-primary-color: "#1c1f1a"                 # text on gold fills
-      primary-background-color: &d-bg "#1c1f1a"     # night forest
-      secondary-background-color: &d-card "#262b24" # mossy stone
+      primary-color: &d-primary "#c9a45c"           # bronze
+      dark-primary-color: "#9a7d3e"
+      light-primary-color: "#dfc388"
+      accent-color: &d-accent "#5fa39b"             # teal
+      text-primary-color: "#111716"                 # text on bronze fills
+      primary-background-color: &d-bg "#111716"     # deep teal-black
+      secondary-background-color: &d-card "#1a2321" # dark slate teal
       card-background-color: *d-card
-      primary-text-color: &d-text "#e6dfc9"
-      secondary-text-color: &d-text2 "#a39d88"
-      disabled-text-color: "#6b6f62"
-      disabled-color: "#4a5045"
-      divider-color: &d-divider "#3a4036"
+      primary-text-color: &d-text "#dce6e1"
+      secondary-text-color: &d-text2 "#8fa39b"
+      disabled-text-color: "#5f706a"
+      disabled-color: "#3f4e49"
+      divider-color: &d-divider "#2e3b38"
       outline-color: *d-divider
-      rgb-primary-color: "176, 141, 79"
-      rgb-accent-color: "111, 143, 90"
-      rgb-primary-text-color: "230, 223, 201"
-      rgb-secondary-text-color: "163, 157, 136"
-      rgb-card-background-color: "38, 43, 36"
-      rgb-primary-background-color: "28, 31, 26"
+      rgb-primary-color: "201, 164, 92"
+      rgb-accent-color: "95, 163, 155"
+      rgb-primary-text-color: "220, 230, 225"
+      rgb-secondary-text-color: "143, 163, 155"
+      rgb-card-background-color: "26, 35, 33"
+      rgb-primary-background-color: "17, 23, 22"
 
-      # Background: soft forest-light gradient behind dashboards
-      # Layers (top to bottom): edge vignette, faint moss/gold blotches, faint lines, base gradient.
+      # Background: Blackreach, deep teal-black with a faint teal glow
+      # Layers (top to bottom): edge vignette, faint teal/bronze blotches, faint lines, base gradient.
       # Pure CSS gradients, same structure as light mode.
       lovelace-background: >-
-        radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.35) 100%) fixed,
-        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(111, 143, 90, 0.07), transparent 70%) fixed,
-        radial-gradient(ellipse 50% 45% at 85% 70%, rgba(176, 141, 79, 0.05), transparent 70%) fixed,
-        radial-gradient(ellipse 40% 30% at 55% 95%, rgba(111, 143, 90, 0.05), transparent 70%) fixed,
-        repeating-linear-gradient(0deg, rgba(230, 223, 201, 0.02) 0 1px, transparent 1px 4px) fixed,
-        radial-gradient(ellipse at top, #2a3326 0%, #1c1f1a 55%, #141612 100%) fixed
+        radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.4) 100%) fixed,
+        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(95, 163, 155, 0.07), transparent 70%) fixed,
+        radial-gradient(ellipse 50% 45% at 85% 70%, rgba(201, 164, 92, 0.05), transparent 70%) fixed,
+        radial-gradient(ellipse 40% 30% at 55% 95%, rgba(95, 163, 155, 0.05), transparent 70%) fixed,
+        repeating-linear-gradient(0deg, rgba(220, 230, 225, 0.02) 0 1px, transparent 1px 4px) fixed,
+        radial-gradient(ellipse at top, #1c2a27 0%, #111716 55%, #0b100f 100%) fixed
 
       # Cards: ha-card-background MUST stay a plain color (HA charts read it as a color).
       # Layers: gold top rule, drop shadow, inner gold hairline 3px in (double rule), soft dark inner edge
-      ha-card-background: "#262b24"
+      ha-card-background: "#1a2321"
       ha-card-border-color: *d-divider
-      ha-card-box-shadow: "inset 0 2px 0 0 #b08d4f, 0 3px 10px rgba(0,0,0,0.45), inset 0 0 0 3px #262b24, inset 0 0 0 4px rgba(176,141,79,0.35), inset 0 0 22px rgba(0,0,0,0.25)"
-      ha-card-header-color: "#d1b277"
+      ha-card-box-shadow: "inset 0 2px 0 0 #c9a45c, 0 3px 10px rgba(0,0,0,0.45), inset 0 0 0 3px #1a2321, inset 0 0 0 4px rgba(201,164,92,0.35), inset 0 0 22px rgba(0,0,0,0.25)"
+      ha-card-header-color: "#dfc388"
 
       # Header / toolbar / tabs
-      app-header-background-color: "#20251e"
+      app-header-background-color: "#161e1c"
       app-header-text-color: *d-text
       app-header-selection-bar-color: *d-primary
       paper-tabs-selection-bar-color: *d-primary
 
       # Sidebar
-      sidebar-background-color: "#161914"
+      sidebar-background-color: "#0d1211"
       sidebar-icon-color: *d-text2
       sidebar-text-color: *d-text2
-      sidebar-selected-background-color: "rgba(176,141,79,0.14)"
+      sidebar-selected-background-color: "rgba(201,164,92,0.14)"
       sidebar-selected-icon-color: *d-primary
-      sidebar-selected-text-color: "#d1b277"
+      sidebar-selected-text-color: "#dfc388"
+
+      # HA neutral scale (dark): 05/10 surfaces, 80 secondary text, 95 primary text (see HA semantic tokens)
+      ha-color-neutral-05: "#111716"
+      ha-color-neutral-10: "#1a2321"
+      ha-color-neutral-20: "#232e2b"
+      ha-color-neutral-30: "#2e3b38"
+      ha-color-neutral-40: "#3f4e49"
+      ha-color-neutral-50: "#5f706a"
+      ha-color-neutral-60: "#6f817a"
+      ha-color-neutral-70: "#7f928a"
+      ha-color-neutral-80: "#8fa39b"
+      ha-color-neutral-90: "#c3d0ca"
+      ha-color-neutral-95: "#dce6e1"
 
       # Semantic
-      error-color: "#b8523f"                        # ember red
+      error-color: "#d96c55"                        # ember red
       warning-color: "#d6a043"                      # amber
       success-color: "#7a9a56"                      # spring moss
       info-color: "#7fa3b5"                         # frost
-      label-badge-red: "#b8523f"
+      label-badge-red: "#d96c55"
       label-badge-green: "#7a9a56"
       label-badge-blue: "#7fa3b5"
       label-badge-yellow: "#d6a043"
-      label-badge-grey: "#6b6f62"
+      label-badge-grey: "#5f706a"
 
       # Entity state colors
       state-icon-color: *d-text2
       state-icon-active-color: *d-primary
-      state-icon-unavailable-color: "#6b6f62"
+      state-icon-unavailable-color: "#5f706a"
       state-light-active-color: "#e8c46a"           # candlelight
       state-switch-active-color: "#7a9a56"
       state-fan-active-color: "#7fa3b5"
-      state-cover-active-color: "#b08d4f"
+      state-cover-active-color: "#c9a45c"
       state-media_player-active-color: "#9a80b0"    # arcane
       state-lock-locked-color: "#7a9a56"
       state-lock-unlocked-color: "#d6a043"
-      state-lock-jammed-color: "#b8523f"
+      state-lock-jammed-color: "#d96c55"
       state-climate-heat-color: "#d0702f"           # ember
       state-climate-cool-color: "#7fa3b5"           # frost
       state-climate-auto-color: "#7a9a56"
       state-climate-dry-color: "#d6a043"
       state-climate-fan_only-color: "#7fa3b5"
-      state-climate-off-color: "#6b6f62"
+      state-climate-off-color: "#5f706a"
       state-person-home-color: "#7a9a56"
       state-person-zone-color: "#d6a043"
-      state-person-not_home-color: "#6b6f62"
+      state-person-not_home-color: "#5f706a"
       state-binary_sensor-active-color: "#d6a043"
-      state-alert-on-color: "#b8523f"
+      state-alert-on-color: "#d96c55"
       state-sun-day-color: "#e8c46a"
       state-sun-night-color: "#9a80b0"
 
       # Switches
       switch-checked-color: *d-primary
-      switch-checked-button-color: "#d1b277"
-      switch-checked-track-color: "#6b5428"
+      switch-checked-button-color: "#dfc388"
+      switch-checked-track-color: "#6e5a2c"
       ha-switch-checked-border-color: *d-primary
-      switch-unchecked-color: "#6b6f62"
-      switch-unchecked-button-color: "#8a8d7d"
-      switch-unchecked-track-color: "#3a4036"
+      switch-unchecked-color: "#5f706a"
+      switch-unchecked-button-color: "#7e918a"
+      switch-unchecked-track-color: "#2e3b38"
 
       # Sliders
       slider-color: *d-primary
-      slider-bar-color: "#4a5045"
-      slider-secondary-color: "#6b5428"
+      slider-bar-color: "#3f4e49"
+      slider-secondary-color: "#6e5a2c"
 
       # Inputs, lists, menus
-      input-fill-color: "#2f352c"
+      input-fill-color: "#232e2b"
       input-ink-color: *d-text
       input-label-ink-color: *d-text2
-      input-disabled-ink-color: "#6b6f62"
-      input-idle-line-color: "#4a5045"
-      input-hover-line-color: "#6b6f62"
+      input-disabled-ink-color: "#5f706a"
+      input-idle-line-color: "#3f4e49"
+      input-hover-line-color: "#5f706a"
       input-dropdown-icon-color: *d-text2
-      paper-listbox-background-color: "#2b3128"
+      paper-listbox-background-color: "#212c2a"
       paper-item-icon-color: *d-text2
       paper-item-icon-active-color: *d-primary
       mdc-theme-primary: *d-primary
       mdc-theme-secondary: *d-accent
       mdc-theme-surface: *d-card
       mdc-theme-on-surface: *d-text
-      mdc-theme-on-primary: "#1c1f1a"
-      mdc-ripple-color: "#b08d4f"
-      mdc-select-fill-color: "#2f352c"
-      mdc-text-field-fill-color: "#2f352c"
+      mdc-theme-on-primary: "#111716"
+      mdc-ripple-color: "#c9a45c"
+      mdc-select-fill-color: "#232e2b"
+      mdc-text-field-fill-color: "#232e2b"
       mdc-select-ink-color: *d-text
       mdc-text-field-ink-color: *d-text
 
       # Dialogs
-      mdc-dialog-heading-ink-color: "#d1b277"
+      mdc-dialog-heading-ink-color: "#dfc388"
       mdc-dialog-content-ink-color: *d-text
       dialog-backdrop-filter: "brightness(55%) blur(4px)"
       ha-dialog-scrim-backdrop-filter: "brightness(55%) blur(4px)"
-      mdc-dialog-scrim-color: "rgba(10,12,9,0.7)"
+      mdc-dialog-scrim-color: "rgba(6,10,9,0.7)"
 
       # Tables, code, markdown
-      table-header-background-color: "#2f352c"
+      table-header-background-color: "#232e2b"
       table-row-background-color: *d-card
-      table-row-alternative-background-color: "#2a3028"
-      code-editor-background-color: "#181b16"
-      markdown-code-background-color: "#181b16"
+      table-row-alternative-background-color: "#1f2a28"
+      code-editor-background-color: "#0f1514"
+      markdown-code-background-color: "#0f1514"
       codemirror-keyword: "#d6a043"
       codemirror-operator: "#d0702f"
       codemirror-variable: "#7fa3b5"
       codemirror-variable-2: "#7a9a56"
       codemirror-variable-3: "#9a80b0"
-      codemirror-builtin: "#b08d4f"
+      codemirror-builtin: "#c9a45c"
       codemirror-atom: "#9a80b0"
       codemirror-number: "#d0702f"
       codemirror-string: "#7a9a56"
-      codemirror-comment: "#6b6f62"
-      codemirror-meta: "#a39d88"
+      codemirror-comment: "#5f706a"
+      codemirror-meta: "#8fa39b"
       codemirror-property: "#e8c46a"
-      codemirror-tag: "#b8523f"
+      codemirror-tag: "#d96c55"
       codemirror-attribute: "#d6a043"
-      scrollbar-thumb-color: "#6b5428"
+      scrollbar-thumb-color: "#6e5a2c"
 
       # Energy dashboard
       energy-solar-color: "#e8c46a"
@@ -319,10 +318,10 @@ Nordic Fantasy:
       graph-color-3: "#7a9a56"
       graph-color-4: "#9a80b0"
       graph-color-5: "#d6a043"
-      graph-color-6: "#b8523f"
-      graph-color-7: "#b08d4f"
-      graph-color-8: "#a39d88"
-      graph-color-9: "#6f8f5a"
+      graph-color-6: "#d96c55"
+      graph-color-7: "#c9a45c"
+      graph-color-8: "#8fa39b"
+      graph-color-9: "#5fa39b"
       graph-color-10: "#e8c46a"
 
     # ===================== LIGHT =====================
@@ -380,6 +379,19 @@ Nordic Fantasy:
       sidebar-selected-background-color: "rgba(125,95,38,0.14)"
       sidebar-selected-icon-color: *l-primary
       sidebar-selected-text-color: "#5e4719"
+
+      # HA neutral scale (light): 95 form fields/surfaces, 90 hover, 80 disabled fill, 05 text
+      ha-color-neutral-05: "#1c1f1a"
+      ha-color-neutral-10: "#262b24"
+      ha-color-neutral-20: "#2f352c"
+      ha-color-neutral-30: "#3a4036"
+      ha-color-neutral-40: "#4a5045"
+      ha-color-neutral-50: "#6b6757"
+      ha-color-neutral-60: "#a39d88"
+      ha-color-neutral-70: "#bdb597"
+      ha-color-neutral-80: "#cbbf9f"
+      ha-color-neutral-90: "#ddd5bf"
+      ha-color-neutral-95: "#ece4cf"
 
       # Semantic
       error-color: "#9a3b2e"
