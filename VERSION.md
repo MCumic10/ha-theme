@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.3.2**
+**Current version: 0.4.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [0.4.0] - 2026-11-16
+- Light mode: parchment texture. Dashboard background gets paper grain, large aged mottling and an edge vignette (inline SVG noise, low alpha).
+- Light mode: cards become parchment sheets with fine grain, a double gold frame (outer border + inner hairline 3px in) and a soft aged inner edge.
+- Card top tint moved from card-mod into the new `ha-card-background` variable (defined in both modes; dark looks unchanged).
 
 ### [0.3.2] - 2026-11-16
 - Removed the picture-elements state-label rules added in 0.3.1: `card-mod-card` cannot reach them (labels live in the picture-elements card's own shadow tree). Style them with `card_mod` on the card itself instead.
