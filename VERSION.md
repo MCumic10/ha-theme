@@ -1,9 +1,9 @@
 # Version
 
-**Current version: 0.13.0**
+**Current version: 1.0.0**
 
 ## Versioning rules
-- [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
+- [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
 - MAJOR: breaking change (theme renamed, variables removed, palette overhaul).
 - MINOR: new variables/features/visual areas covered.
 - PATCH: color tweaks and fixes.
@@ -11,6 +11,10 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [1.0.0] - 2026-11-16
+- First stable release. BREAKING: theme renamed "Nordic Fantasy" -> "Winterhold"; file renamed `themes/nordic_fantasy.yaml` -> `themes/winterhold.yaml`. Re-select the theme in your profile and delete any old `nordic_fantasy.yaml` from `/config/themes/`.
+- Added README/HACS preview banner (`docs/banner.svg` source, `docs/banner.png` linked).
 
 ### [0.13.0] - 2026-11-16
 - Dark palette changed to "Winterhold": cold slate night (`#12171c`, cards `#1b222a`), frost-blue primary `#8fb3c9`, gold accent `#c9a15a`. Earlier dark palettes: Blackreach in tag v0.11.0, Embers of Whiterun in tag v0.12.0. Light theme unchanged.

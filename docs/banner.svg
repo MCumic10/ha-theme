@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="Winterhold, a Home Assistant theme in light and dark">
+  <defs>
+    <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#7d5f26"/><stop offset="1" stop-color="#7d5f26" stop-opacity="0"/></linearGradient>
+    <linearGradient id="gd" x1="0" x2="1"><stop offset="0" stop-color="#8fb3c9"/><stop offset="1" stop-color="#8fb3c9" stop-opacity="0"/></linearGradient>
+    <radialGradient id="bgl" cx="50%" cy="0%" r="110%"><stop offset="0" stop-color="#f1ebd8"/><stop offset="0.55" stop-color="#e9e2d0"/><stop offset="1" stop-color="#ddd5bf"/></radialGradient>
+    <radialGradient id="bgd" cx="50%" cy="0%" r="110%"><stop offset="0" stop-color="#1d2832"/><stop offset="0.55" stop-color="#12171c"/><stop offset="1" stop-color="#0b0f13"/></radialGradient>
+    <clipPath id="cl"><rect x="0" y="0" width="600" height="430"/></clipPath>
+    <clipPath id="cd"><rect x="600" y="0" width="600" height="430"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="600" height="430" fill="url(#bgl)"/>
+  <rect x="600" y="0" width="600" height="430" fill="url(#bgd)"/>
+  <g font-family="Georgia, 'Palatino Linotype', serif" text-anchor="middle">
+    <g clip-path="url(#cl)"><text x="600" y="92" font-size="64" font-weight="600" letter-spacing="6" fill="#5e4719">WINTERHOLD</text>
+      <text x="600" y="128" font-size="19" letter-spacing="3" fill="#6b6757">A HOME ASSISTANT THEME</text></g>
+    <g clip-path="url(#cd)"><text x="600" y="92" font-size="64" font-weight="600" letter-spacing="6" fill="#b5d0e0">WINTERHOLD</text>
+      <text x="600" y="128" font-size="19" letter-spacing="3" fill="#93a0ab">A HOME ASSISTANT THEME</text></g>
+  </g>
+  <g>
+  <rect x="60" y="150" width="480" height="228" rx="4" fill="#f4eedd" stroke="#cbbf9f" stroke-width="1"/>
+  <rect x="60" y="150" width="480" height="3" fill="#7d5f26"/>
+  <rect x="65" y="158" width="470" height="215" rx="2" fill="none" stroke="#7d5f26" stroke-opacity="0.35"/>
+  <text x="88" y="194" font-family="Georgia, 'Palatino Linotype', serif" font-size="20" font-weight="600" letter-spacing="1.6" fill="#5e4719">LIVING ROOM</text>
+  <rect x="88" y="206" width="424" height="1.5" fill="url(#gl)"/>
+  <circle cx="100" cy="246" r="11" fill="#c48a12" fill-opacity="0.22"/>
+  <circle cx="100" cy="246" r="5" fill="#c48a12"/>
+  <text x="126" y="252" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#2b2a24">Study light</text>
+  <rect x="456" y="235" width="48" height="22" rx="4" fill="#a98544"/>
+  <rect x="483" y="238" width="18" height="16" rx="3" fill="#f4eedd"/>
+  <circle cx="100" cy="290" r="11" fill="#55703a" fill-opacity="0.22"/>
+  <circle cx="100" cy="290" r="5" fill="#55703a"/>
+  <text x="126" y="296" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#2b2a24">Hallway lamp</text>
+  <rect x="456" y="279" width="48" height="22" rx="4" fill="#a98544"/>
+  <rect x="483" y="282" width="18" height="16" rx="3" fill="#f4eedd"/>
+  <circle cx="100" cy="334" r="11" fill="#b4571f" fill-opacity="0.22"/>
+  <circle cx="100" cy="334" r="5" fill="#b4571f"/>
+  <text x="126" y="340" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#2b2a24">Kitchen heater</text>
+  <rect x="456" y="323" width="48" height="22" rx="4" fill="#bdb597"/>
+  <rect x="459" y="326" width="18" height="16" rx="3" fill="#f4eedd"/>
+</g>
+  <g>
+  <rect x="660" y="150" width="480" height="228" rx="4" fill="#1b222a" stroke="#2b353f" stroke-width="1"/>
+  <rect x="660" y="150" width="480" height="3" fill="#8fb3c9"/>
+  <rect x="665" y="158" width="470" height="215" rx="2" fill="none" stroke="#8fb3c9" stroke-opacity="0.35"/>
+  <text x="688" y="194" font-family="Georgia, 'Palatino Linotype', serif" font-size="20" font-weight="600" letter-spacing="1.6" fill="#b5d0e0">LIVING ROOM</text>
+  <rect x="688" y="206" width="424" height="1.5" fill="url(#gd)"/>
+  <circle cx="700" cy="246" r="11" fill="#e8c46a" fill-opacity="0.22"/>
+  <circle cx="700" cy="246" r="5" fill="#e8c46a"/>
+  <text x="726" y="252" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#dde5ea">Study light</text>
+  <rect x="1056" y="235" width="48" height="22" rx="4" fill="#3f5c70"/>
+  <rect x="1083" y="238" width="18" height="16" rx="3" fill="#b5d0e0"/>
+  <circle cx="700" cy="290" r="11" fill="#86a65f" fill-opacity="0.22"/>
+  <circle cx="700" cy="290" r="5" fill="#86a65f"/>
+  <text x="726" y="296" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#dde5ea">Hallway lamp</text>
+  <rect x="1056" y="279" width="48" height="22" rx="4" fill="#3f5c70"/>
+  <rect x="1083" y="282" width="18" height="16" rx="3" fill="#b5d0e0"/>
+  <circle cx="700" cy="334" r="11" fill="#e4672c" fill-opacity="0.22"/>
+  <circle cx="700" cy="334" r="5" fill="#e4672c"/>
+  <text x="726" y="340" font-family="Georgia, 'Palatino Linotype', serif" font-size="17" fill="#dde5ea">Kitchen heater</text>
+  <rect x="1056" y="323" width="48" height="22" rx="4" fill="#2b353f"/>
+  <rect x="1059" y="326" width="18" height="16" rx="3" fill="#8493a0"/>
+</g>
+  <rect x="599" y="0" width="2" height="430" fill="#7d5f26" fill-opacity="0.5"/>
+  <rect x="60" y="398" width="40" height="14" rx="2" fill="#e9e2d0"/><rect x="106" y="398" width="40" height="14" rx="2" fill="#f4eedd"/><rect x="152" y="398" width="40" height="14" rx="2" fill="#7d5f26"/><rect x="198" y="398" width="40" height="14" rx="2" fill="#556b3f"/><rect x="244" y="398" width="40" height="14" rx="2" fill="#4a7189"/><rect x="290" y="398" width="40" height="14" rx="2" fill="#b4571f"/><rect x="336" y="398" width="40" height="14" rx="2" fill="#c48a12"/>
+  <rect x="660" y="398" width="40" height="14" rx="2" fill="#12171c"/><rect x="706" y="398" width="40" height="14" rx="2" fill="#1b222a"/><rect x="752" y="398" width="40" height="14" rx="2" fill="#8fb3c9"/><rect x="798" y="398" width="40" height="14" rx="2" fill="#c9a15a"/><rect x="844" y="398" width="40" height="14" rx="2" fill="#6db3d6"/><rect x="890" y="398" width="40" height="14" rx="2" fill="#e4672c"/><rect x="936" y="398" width="40" height="14" rx="2" fill="#e8c46a"/>
+  <text x="400" y="410" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#6b6757">LIGHT</text>
+  <text x="1000" y="410" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#93a0ab">DARK</text>
+</svg>

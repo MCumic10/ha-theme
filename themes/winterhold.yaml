@@ -1,10 +1,10 @@
-# Nordic Fantasy - Home Assistant theme
+# Winterhold - Home Assistant theme
 # Natural, earthy fantasy palette (Elder Scrolls / Skyrim inspired):
-# night forest, moss, weathered stone, parchment, aged gold, ember.
+# light = aged parchment and gold, dark = cold slate night and frost.
 # Palette table lives in CLAUDE.md - keep in sync.
 # Anchors (d-* dark, l-* light) are defined inline at first use.
 
-Nordic Fantasy:
+Winterhold:
   # ================= Shared (both modes) =================
   # Typography: serif stack, available on Windows/macOS/Linux/Android/iOS
   primary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"

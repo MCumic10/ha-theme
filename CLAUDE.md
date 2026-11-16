@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 ## Project
-Custom Home Assistant theme, "Nordic Fantasy": natural, earthy fantasy colors with the Elder Scrolls (Skyrim) as a loose guideline — night forest, moss, weathered stone, parchment, aged gold, ember red. Readability comes first; atmosphere second.
+Custom Home Assistant theme, "Winterhold" (formerly "Nordic Fantasy"): natural, earthy fantasy colors with the Elder Scrolls (Skyrim) as a loose guideline — light: parchment, aged gold, ember; dark: cold slate night, frost blue. Readability comes first; atmosphere second.
 
 ## Approach
 - Start minimal, grow incrementally. One concern per change/commit.
@@ -9,7 +9,8 @@ Custom Home Assistant theme, "Nordic Fantasy": natural, earthy fantasy colors wi
 
 ## Layout
 ```
-themes/nordic_fantasy.yaml   the theme
+themes/winterhold.yaml         the theme
+docs/banner.svg|png             README/HACS preview (svg is the source, png is what README links)
 hacs.json                    HACS metadata (theme repo; yaml files must stay in themes/)
 VERSION.md                   current version + changelog + versioning rules
 README.md                    install/usage for humans
