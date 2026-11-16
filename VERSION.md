@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 0.3.1**
+**Current version: 0.3.2**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stay on `0.x` while the theme is experimental.
@@ -12,8 +12,11 @@
 
 ## Changelog
 
+### [0.3.2] - 2026-11-16
+- Removed the picture-elements state-label rules added in 0.3.1: `card-mod-card` cannot reach them (labels live in the picture-elements card's own shadow tree). Style them with `card_mod` on the card itself instead.
+
 ### [0.3.1] - 2026-11-16
-- card-mod: picture-elements state labels get a near-invisible, tight plaque (gold hairline, serif text) that brightens with a candlelight glow on hover.
+- card-mod: picture-elements state labels get a near-invisible, tight plaque (gold hairline, serif text) that brightens with a candlelight glow on hover. (Did not work from the theme; removed in 0.3.2.)
 
 ### [0.3.0] - 2026-11-15
 - card-mod ornaments (optional, needs card-mod): gold top rule and soft gold glow on cards, small-caps spaced card titles, gold rule under dashboard header, sidebar edge and small-caps title, framed more-info dialogs.
