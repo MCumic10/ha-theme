@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 1.0.0**
+**Current version: 1.0.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [1.0.1] - 2026-11-18
+- Fix: serif fonts did not apply on current HA versions. Added `ha-font-family-body`, `ha-font-family-heading` and `ha-font-family-longform` (the tokens newer HA reads); the older `paper-font-*` keys stay for compatibility.
 
 ### [1.0.0] - 2026-11-16
 - First stable release. BREAKING: theme renamed "Nordic Fantasy" -> "Winterhold"; file renamed `themes/nordic_fantasy.yaml` -> `themes/winterhold.yaml`. Re-select the theme in your profile and delete any old `nordic_fantasy.yaml` from `/config/themes/`.

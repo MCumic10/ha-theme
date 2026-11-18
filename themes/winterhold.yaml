@@ -12,6 +12,10 @@ Winterhold:
   paper-font-common-base_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-body1_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-headline_-_font-family: "Georgia, 'Palatino Linotype', serif"
+  # Newer HA (2025.x+) reads the ha-font-family-* tokens instead of the paper-font-* / primary-font-family ones above
+  ha-font-family-body: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+  ha-font-family-heading: "Georgia, 'Palatino Linotype', serif"
+  ha-font-family-longform: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   ha-card-header-font-family: "Georgia, 'Palatino Linotype', serif"
   ha-card-header-font-size: 20px
   ha-card-header-font-weight: "600"
