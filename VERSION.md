@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 1.0.2**
+**Current version: 1.1.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [1.1.0] - 2026-11-18
+- card-mod, standard cards: card titles get a small gold flourish (❖) before the text; active tile cards get a faint inner glow in their state color; glance card entities get a faint gold wash on hover. All best effort (ignored without card-mod or if a card's structure differs).
 
 ### [1.0.2] - 2026-11-18
 - Switch entity icons (when on) now use the primary color (frost in dark, gold in light) instead of moss, so they match the toggle next to them. Locks and other "ok" states stay moss.
