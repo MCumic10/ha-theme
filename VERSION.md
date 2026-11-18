@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 1.0.1**
+**Current version: 1.0.2**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [1.0.2] - 2026-11-18
+- Switch entity icons (when on) now use the primary color (frost in dark, gold in light) instead of moss, so they match the toggle next to them. Locks and other "ok" states stay moss.
 
 ### [1.0.1] - 2026-11-18
 - Fix: serif fonts did not apply on current HA versions. Added `ha-font-family-body`, `ha-font-family-heading` and `ha-font-family-longform` (the tokens newer HA reads); the older `paper-font-*` keys stay for compatibility.

@@ -37,7 +37,7 @@ Winterhold:
   # Uses theme variables only, so it follows light/dark automatically.
   card-mod-card: |
     /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
-       active icons glow in their state color (candlelight lights, ember heat, frost cooling, moss switches) */
+       active icons glow in their state color (candlelight lights, ember heat, frost cooling, primary-colored switches) */
     ha-card.active ha-tile-icon {
       filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tile-color) 55%, transparent));
       transition: filter 0.3s ease;
@@ -220,7 +220,7 @@ Winterhold:
       state-icon-active-color: *d-primary
       state-icon-unavailable-color: "#677582"
       state-light-active-color: "#e8c46a"           # candlelight
-      state-switch-active-color: "#86a65f"
+      state-switch-active-color: *d-primary         # matches the toggle
       state-fan-active-color: "#7fa3b5"
       state-cover-active-color: "#8fb3c9"
       state-media_player-active-color: "#a98cc0"    # arcane
@@ -425,7 +425,7 @@ Winterhold:
       state-icon-active-color: *l-primary
       state-icon-unavailable-color: "#9c967f"
       state-light-active-color: "#c48a12"
-      state-switch-active-color: "#55703a"
+      state-switch-active-color: *l-primary         # matches the toggle
       state-fan-active-color: "#4a7189"
       state-cover-active-color: "#7d5f26"
       state-media_player-active-color: "#6c5290"
