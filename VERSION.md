@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.0.1**
+**Current version: 2.1.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,10 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.1.0] - 2026-11-20
+- Card edges (`ha-card-box-shadow`, no card-mod needed): dark cards get a thin icy highlight on the bottom edge and a faint frost glow beneath; light cards get an aged, darker bottom edge and a warmer brown shadow, like a worn parchment sheet.
+- Dialog scrims: dark is a frosted night blue (`rgba(8,15,24,0.72)`), light is a warm candle-lit umber (`rgba(72,50,24,0.58)`).
 
 ### [2.0.1] - 2026-11-20
 - Skyline mountains are now irregular ridgelines (about 50 points each, uneven peaks and saddles, sharp crests with gently curved slopes instead of straight lines) instead of simple triangles, with small snow caps on the two tallest peaks. Still two layers.
