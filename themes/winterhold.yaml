@@ -90,6 +90,57 @@ Winterhold:
           animation: nf-ember-pulse 3s ease-in-out infinite;
         }
       }
+      /* Phase 3 tile effects (all slow, all disabled under prefers-reduced-motion) */
+      /* Lights: candle flicker, irregular timing so it does not look like a pulse */
+      @keyframes nf-candle {
+        0%   { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tile-color) 70%, transparent)); }
+        14%  { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 80%, transparent)); }
+        27%  { filter: drop-shadow(0 0 7px color-mix(in srgb, var(--tile-color) 62%, transparent)); }
+        41%  { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 76%, transparent)); }
+        58%  { filter: drop-shadow(0 0 11px color-mix(in srgb, var(--tile-color) 82%, transparent)); }
+        73%  { filter: drop-shadow(0 0 7px color-mix(in srgb, var(--tile-color) 64%, transparent)); }
+        89%  { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 74%, transparent)); }
+        100% { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tile-color) 70%, transparent)); }
+      }
+      /* Cooling: cold breath, slower and bluer than the ember pulse */
+      @keyframes nf-frost {
+        0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 40%, transparent)); }
+        50%      { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent)); }
+      }
+      /* Playing media: arcane shimmer, glow breathes while the hue drifts a little */
+      @keyframes nf-arcane {
+        0%, 100% { filter: drop-shadow(0 0 4px color-mix(in srgb, var(--tile-color) 50%, transparent)) hue-rotate(0deg); }
+        50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 80%, transparent)) hue-rotate(-18deg); }
+      }
+      /* Alerts: slow, low-key red pulse */
+      @keyframes nf-alert {
+        0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 50%, transparent)); }
+        50%      { filter: drop-shadow(0 0 12px color-mix(in srgb, var(--tile-color) 90%, transparent)); }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        ha-tile-icon[data-domain="light"][data-state="on"] {
+          animation: nf-candle 5.3s ease-in-out infinite;
+        }
+        ha-tile-icon[data-domain="climate"][data-state="cool"] {
+          animation: nf-frost 4s ease-in-out infinite;
+        }
+        ha-tile-icon[data-domain="media_player"][data-state="playing"] {
+          animation: nf-arcane 4.5s ease-in-out infinite;
+        }
+        ha-tile-icon[data-domain="alert"][data-state="on"] {
+          animation: nf-alert 2.4s ease-in-out infinite;
+        }
+      }
+      /* Locks: sealed = steady moss glow, unsealed = amber glow */
+      ha-tile-icon[data-domain="lock"][data-state="locked"] {
+        filter: drop-shadow(0 0 6px color-mix(in srgb, var(--tile-color) 55%, transparent));
+      }
+      ha-tile-icon[data-domain="lock"][data-state="unlocked"] {
+        filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tile-color) 75%, transparent));
+      }
+      ha-card:has(ha-tile-icon[data-domain="lock"][data-state="unlocked"]) {
+        border-color: var(--warning-color);
+      }
       /* Active tile: faint inner glow in the state color, layered on top of the themed card frame */
       ha-card.active {
         box-shadow: var(--ha-card-box-shadow), inset 0 0 18px color-mix(in srgb, var(--tile-color) 14%, transparent);
@@ -172,15 +223,8 @@ Winterhold:
     }
     .title {
       font-variant: small-caps;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.06em;
       color: var(--sidebar-selected-text-color);
-    }
-    /* Sigil before the sidebar title */
-    .title::before {
-      content: "\2744";
-      margin-right: 0.5em;
-      color: var(--primary-color);
-      opacity: 0.85;
     }
     /* Group dividers: gold hairline fading out at both ends instead of a plain rule */
     .divider {

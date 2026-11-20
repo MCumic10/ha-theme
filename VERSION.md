@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.2.1**
+**Current version: 2.3.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,11 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.3.0] - 2026-11-20
+- Phase 3 tile effects (card-mod, best effort, all animations off under `prefers-reduced-motion`): candle flicker on lights that are on, frost breath on cooling climate tiles, arcane shimmer on playing media players, slow red pulse on active alerts, locks glow moss when sealed and amber when unsealed (unsealed tiles also get an amber border).
+- Removed the sidebar snowflake added in 2.2.0: it made "Home Assistant" in the sidebar title get cut off. Title letter spacing reduced slightly for the same reason.
+- Not done yet from phase 3: extra theme variants (Minimal / Hearth / OLED) and opt-in snowfall.
 
 ### [2.2.1] - 2026-11-20
 - Fix: card styling from card-mod did not show in 2.2.0 (card title flourish, small caps, corner brackets, hover, glows, drop cap). Having both `card-mod-card` and `card-mod-card-yaml` made card-mod ignore the plain one. All card rules now live in a single `card-mod-card-yaml` (`.:` for the card, `ha-markdown$:` for the drop cap).
