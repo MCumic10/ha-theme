@@ -38,95 +38,106 @@ Winterhold:
   # Uses theme variables only, so it follows light/dark automatically.
   # card-mod requires this key to equal the theme name.
   card-mod-theme: Winterhold
-  card-mod-card: |
-    /* Corner flourishes: gold L-brackets on the four corners, sitting on the inner hairline (click-through) */
-    ha-card::before {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      pointer-events: none;
-      opacity: 0.75;
-      background:
-        linear-gradient(var(--primary-color), var(--primary-color)) top left / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top left / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top right / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) top right / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 1px 14px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 14px 1px no-repeat,
-        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 1px 14px no-repeat;
-    }
-    /* Title ornament: small diamond at the start of the gold rule */
-    .card-header {
-      position: relative;
-    }
-    .card-header::after {
-      content: "\25C6";
-      position: absolute;
-      left: 12px;
-      bottom: 2px;
-      font-size: 8px;
-      line-height: 1;
-      color: var(--primary-color);
-    }
-    /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
-       active icons glow in their state color (candlelight lights, ember heat, frost cooling, primary-colored switches) */
-    ha-card.active ha-tile-icon {
-      filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tile-color) 55%, transparent));
-      transition: filter 0.3s ease;
-    }
-    ha-tile-icon[data-domain="light"][data-state="on"] {
-      filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent));
-    }
-    /* Heating climate: slow ember pulse (skipped when the user prefers reduced motion) */
-    @keyframes nf-ember-pulse {
-      0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 45%, transparent)); }
-      50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 85%, transparent)); }
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      ha-tile-icon[data-domain="climate"][data-state="heat"] {
-        animation: nf-ember-pulse 3s ease-in-out infinite;
+  # card-mod: ONE yaml-form key for cards (card-mod ignores plain card-mod-card when -yaml exists). "." = the card itself.
+  card-mod-card-yaml: |
+    .: |
+      /* Corner flourishes: gold L-brackets on the four corners, sitting on the inner hairline (click-through) */
+      ha-card::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        pointer-events: none;
+        opacity: 0.75;
+        background:
+          linear-gradient(var(--primary-color), var(--primary-color)) top left / 14px 1px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) top left / 1px 14px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) top right / 14px 1px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) top right / 1px 14px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 14px 1px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 1px 14px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 14px 1px no-repeat,
+          linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 1px 14px no-repeat;
       }
-    }
-    /* Active tile: faint inner glow in the state color, layered on top of the themed card frame */
-    ha-card.active {
-      box-shadow: var(--ha-card-box-shadow), inset 0 0 18px color-mix(in srgb, var(--tile-color) 14%, transparent);
-    }
-    /* Glance card: faint gold wash under the hovered entity (best effort) */
-    .entity:hover {
-      background-color: rgba(var(--rgb-primary-color), 0.07);
-      border-radius: 3px;
-    }
-    /* Hover: card border lights up gold; entity rows get a faint gold wash */
-    ha-card {
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    ha-card:hover {
-      border-color: var(--primary-color);
-    }
-    /* Row dividers: gold hairline fading out at both ends (entities-style cards) */
-    #states > *:not(:last-child) {
-      background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.45), transparent) bottom / 100% 1px no-repeat;
-    }
-    #states > *:hover {
-      background-color: rgba(var(--rgb-primary-color), 0.07);
-    }
-    /* Card titles: small caps + gold rule that fades out to the right, with a small flourish before the text */
-    .card-header::before {
-      content: "\2756";
-      color: var(--primary-color);
-      font-size: 0.6em;
-      margin-right: 0.6em;
-      vertical-align: 0.15em;
-      opacity: 0.8;
-    }
-    .card-header {
-      font-variant: small-caps;
-      letter-spacing: 0.08em;
-      padding-bottom: 14px;
-      background:
-        linear-gradient(to right, var(--primary-color), rgba(var(--rgb-primary-color), 0)) left 16px bottom 6px / calc(100% - 32px) 1px no-repeat;
-    }
+      /* Title ornament: small diamond at the start of the gold rule */
+      .card-header {
+        position: relative;
+      }
+      .card-header::after {
+        content: "\25C6";
+        position: absolute;
+        left: 12px;
+        bottom: 2px;
+        font-size: 8px;
+        line-height: 1;
+        color: var(--primary-color);
+      }
+      /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
+         active icons glow in their state color (candlelight lights, ember heat, frost cooling, primary-colored switches) */
+      ha-card.active ha-tile-icon {
+        filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tile-color) 55%, transparent));
+        transition: filter 0.3s ease;
+      }
+      ha-tile-icon[data-domain="light"][data-state="on"] {
+        filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent));
+      }
+      /* Heating climate: slow ember pulse (skipped when the user prefers reduced motion) */
+      @keyframes nf-ember-pulse {
+        0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 45%, transparent)); }
+        50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 85%, transparent)); }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        ha-tile-icon[data-domain="climate"][data-state="heat"] {
+          animation: nf-ember-pulse 3s ease-in-out infinite;
+        }
+      }
+      /* Active tile: faint inner glow in the state color, layered on top of the themed card frame */
+      ha-card.active {
+        box-shadow: var(--ha-card-box-shadow), inset 0 0 18px color-mix(in srgb, var(--tile-color) 14%, transparent);
+      }
+      /* Glance card: faint gold wash under the hovered entity (best effort) */
+      .entity:hover {
+        background-color: rgba(var(--rgb-primary-color), 0.07);
+        border-radius: 3px;
+      }
+      /* Hover: card border lights up gold; entity rows get a faint gold wash */
+      ha-card {
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      ha-card:hover {
+        border-color: var(--primary-color);
+      }
+      /* Row dividers: gold hairline fading out at both ends (entities-style cards) */
+      #states > *:not(:last-child) {
+        background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.45), transparent) bottom / 100% 1px no-repeat;
+      }
+      #states > *:hover {
+        background-color: rgba(var(--rgb-primary-color), 0.07);
+      }
+      /* Card titles: small caps + gold rule that fades out to the right, with a small flourish before the text */
+      .card-header::before {
+        content: "\2756";
+        color: var(--primary-color);
+        font-size: 0.6em;
+        margin-right: 0.6em;
+        vertical-align: 0.15em;
+        opacity: 0.8;
+      }
+      .card-header {
+        font-variant: small-caps;
+        letter-spacing: 0.08em;
+        padding-bottom: 14px;
+        background:
+          linear-gradient(to right, var(--primary-color), rgba(var(--rgb-primary-color), 0)) left 16px bottom 6px / calc(100% - 32px) 1px no-repeat;
+      }
+    ha-markdown$: |
+      p:first-of-type::first-letter {
+        float: left;
+        font-family: Cinzel, 'Trajan Pro', Georgia, serif;
+        font-size: 2.6em;
+        line-height: 0.85;
+        padding: 0.04em 0.1em 0 0;
+        color: var(--primary-color);
+      }
   card-mod-root: |
     .header, app-header {
       border-bottom: 2px solid var(--primary-color);
@@ -185,18 +196,6 @@ Winterhold:
         border: 1px solid var(--divider-color);
         border-top: 2px solid var(--primary-color);
         box-shadow: inset 0 0 0 3px var(--card-background-color), inset 0 0 0 4px rgba(var(--rgb-primary-color), 0.35);
-      }
-  # Illuminated drop cap on the first paragraph of markdown cards
-  # (best effort; one-line texts just show a larger gold first letter)
-  card-mod-card-yaml: |
-    ha-markdown$: |
-      p:first-of-type::first-letter {
-        float: left;
-        font-family: Cinzel, 'Trajan Pro', Georgia, serif;
-        font-size: 2.6em;
-        line-height: 0.85;
-        padding: 0.04em 0.1em 0 0;
-        color: var(--primary-color);
       }
 
   modes:

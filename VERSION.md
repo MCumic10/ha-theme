@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.2.0**
+**Current version: 2.2.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.2.1] - 2026-11-20
+- Fix: card styling from card-mod did not show in 2.2.0 (card title flourish, small caps, corner brackets, hover, glows, drop cap). Having both `card-mod-card` and `card-mod-card-yaml` made card-mod ignore the plain one. All card rules now live in a single `card-mod-card-yaml` (`.:` for the card, `ha-markdown$:` for the drop cap).
 
 ### [2.2.0] - 2026-11-20
 - Phase 2 "typography and ornaments" (all card-mod, best effort, ignored without card-mod; not verified in a live HA):
