@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.0.0**
+**Current version: 2.0.1**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.0.1] - 2026-11-20
+- Skyline mountains are now irregular ridgelines (about 50 points each, uneven peaks and saddles, sharp crests with gently curved slopes instead of straight lines) instead of simple triangles, with small snow caps on the two tallest peaks. Still two layers.
 
 ### [2.0.0] - 2026-11-20
 - Dashboard background gets a mountain skyline along the bottom edge (non-tiling inline SVG, no seams): dark = dark ridges under a faint moss-green aurora glow, light = faint ink-wash ridges like an old map. Alpha kept low so card/text contrast is unchanged.
