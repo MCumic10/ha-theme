@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 1.1.0**
+**Current version: 2.0.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.0.0] - 2026-11-20
+- Dashboard background gets a mountain skyline along the bottom edge (non-tiling inline SVG, no seams): dark = dark ridges under a faint moss-green aurora glow, light = faint ink-wash ridges like an old map. Alpha kept low so card/text contrast is unchanged.
 
 ### [1.1.0] - 2026-11-18
 - card-mod, standard cards: card titles get a small gold flourish (❖) before the text; active tile cards get a faint inner glow in their state color; glance card entities get a faint gold wash on hover. All best effort (ignored without card-mod or if a card's structure differs).
