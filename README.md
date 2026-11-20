@@ -22,4 +22,6 @@ Natural, earthy fantasy theme for Home Assistant, loosely inspired by the Elder 
 
 Optional: install [card-mod](https://github.com/thomasloven/lovelace-card-mod) from HACS for the ornamental card, header and sidebar styling. The theme works without it.
 
+Optional: install the free [Cinzel](https://fonts.google.com/specimen/Cinzel) font on the device you view Home Assistant on (or Trajan Pro); headings use it automatically when present and fall back to Georgia otherwise.
+
 See [VERSION.md](VERSION.md) for the changelog.

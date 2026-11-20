@@ -11,12 +11,13 @@ Winterhold:
   secondary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-common-base_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-body1_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
-  paper-font-headline_-_font-family: "Georgia, 'Palatino Linotype', serif"
+  # Headings: Cinzel / Trajan Pro (carved Roman capitals) are used only if installed on the device, else Georgia
+  paper-font-headline_-_font-family: "Cinzel, 'Trajan Pro', Georgia, 'Palatino Linotype', serif"
   # Newer HA (2025.x+) reads the ha-font-family-* tokens instead of the paper-font-* / primary-font-family ones above
   ha-font-family-body: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
-  ha-font-family-heading: "Georgia, 'Palatino Linotype', serif"
+  ha-font-family-heading: "Cinzel, 'Trajan Pro', Georgia, 'Palatino Linotype', serif"
   ha-font-family-longform: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
-  ha-card-header-font-family: "Georgia, 'Palatino Linotype', serif"
+  ha-card-header-font-family: "Cinzel, 'Trajan Pro', Georgia, 'Palatino Linotype', serif"
   ha-card-header-font-size: 20px
   ha-card-header-font-weight: "600"
 
@@ -35,7 +36,39 @@ Winterhold:
   # ================= card-mod (requires card-mod from HACS) =================
   # Ignored by Home Assistant if card-mod is not installed.
   # Uses theme variables only, so it follows light/dark automatically.
+  # card-mod requires this key to equal the theme name.
+  card-mod-theme: Winterhold
   card-mod-card: |
+    /* Corner flourishes: gold L-brackets on the four corners, sitting on the inner hairline (click-through) */
+    ha-card::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      pointer-events: none;
+      opacity: 0.75;
+      background:
+        linear-gradient(var(--primary-color), var(--primary-color)) top left / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) top left / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) top right / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) top right / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) bottom left / 1px 14px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 14px 1px no-repeat,
+        linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 1px 14px no-repeat;
+    }
+    /* Title ornament: small diamond at the start of the gold rule */
+    .card-header {
+      position: relative;
+    }
+    .card-header::after {
+      content: "\25C6";
+      position: absolute;
+      left: 12px;
+      bottom: 2px;
+      font-size: 8px;
+      line-height: 1;
+      color: var(--primary-color);
+    }
     /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
        active icons glow in their state color (candlelight lights, ember heat, frost cooling, primary-colored switches) */
     ha-card.active ha-tile-icon {
@@ -131,11 +164,39 @@ Winterhold:
       letter-spacing: 0.12em;
       color: var(--sidebar-selected-text-color);
     }
-  card-mod-more-info: |
+    /* Sigil before the sidebar title */
+    .title::before {
+      content: "\2744";
+      margin-right: 0.5em;
+      color: var(--primary-color);
+      opacity: 0.85;
+    }
+    /* Group dividers: gold hairline fading out at both ends instead of a plain rule */
+    .divider {
+      border-bottom: none !important;
+      height: 1px;
+      margin: 6px 12px;
+      background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.6), transparent);
+    }
+  # -yaml form so the dialog's shadow root can be reached with "$". (The old non-yaml key held YAML text, which is not valid CSS.)
+  card-mod-more-info-yaml: |
     $: |
       .mdc-dialog .mdc-dialog__surface {
         border: 1px solid var(--divider-color);
         border-top: 2px solid var(--primary-color);
+        box-shadow: inset 0 0 0 3px var(--card-background-color), inset 0 0 0 4px rgba(var(--rgb-primary-color), 0.35);
+      }
+  # Illuminated drop cap on the first paragraph of markdown cards
+  # (best effort; one-line texts just show a larger gold first letter)
+  card-mod-card-yaml: |
+    ha-markdown$: |
+      p:first-of-type::first-letter {
+        float: left;
+        font-family: Cinzel, 'Trajan Pro', Georgia, serif;
+        font-size: 2.6em;
+        line-height: 0.85;
+        padding: 0.04em 0.1em 0 0;
+        color: var(--primary-color);
       }
 
   modes:

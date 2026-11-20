@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.1.0**
+**Current version: 2.2.0**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,15 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.2.0] - 2026-11-20
+- Phase 2 "typography and ornaments" (all card-mod, best effort, ignored without card-mod; not verified in a live HA):
+  - Heading font stack now starts with Cinzel / Trajan Pro (carved Roman capitals), used only if installed on the device, otherwise Georgia as before. No web font is loaded: `@font-face` inside card-mod's shadow roots does not register, and it would send requests to an external host.
+  - Cards: gold L-shaped corner flourishes on the inner hairline (via `ha-card::before`); card titles get a small diamond at the start of the gold rule.
+  - Markdown cards: illuminated drop cap (large gold first letter) via `card-mod-card-yaml`.
+  - Sidebar: snowflake sigil before the title; group dividers are a gold hairline fading out at both ends.
+  - More-info dialog: matching double frame. Fix: the old `card-mod-more-info` key contained YAML text (not valid CSS) and never applied; it is now `card-mod-more-info-yaml`.
+  - Added `card-mod-theme: Winterhold`, which card-mod's theme docs require to equal the theme name.
 
 ### [2.1.0] - 2026-11-20
 - Card edges (`ha-card-box-shadow`, no card-mod needed): dark cards get a thin icy highlight on the bottom edge and a faint frost glow beneath; light cards get an aged, darker bottom edge and a warmer brown shadow, like a worn parchment sheet.
