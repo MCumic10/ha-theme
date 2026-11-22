@@ -209,16 +209,16 @@ Winterhold:
     dark:
       primary-color: &d-primary "#8fb3c9"
       dark-primary-color: "#5f8199"
-      light-primary-color: &d-primary-hi "#b5d0e0"
+      light-primary-color: "#b5d0e0"
       accent-color: &d-accent "#c9a15a"
-      text-primary-color: &d-bg "#12171c"
-      primary-background-color: *d-bg
+      text-primary-color: "#12171c"
+      primary-background-color: &d-bg "#12171c"
       secondary-background-color: &d-card "#1b222a"
       card-background-color: *d-card
       primary-text-color: &d-text "#dde5ea"
       secondary-text-color: &d-text2 "#93a0ab"
-      disabled-text-color: &d-muted "#677582"
-      disabled-color: &d-line "#404c57"
+      disabled-text-color: "#677582"
+      disabled-color: "#404c57"
       divider-color: &d-divider "#2b353f"
       outline-color: *d-divider
       rgb-primary-color: "143, 179, 201"
@@ -238,10 +238,10 @@ Winterhold:
         repeating-linear-gradient(0deg, rgba(221, 229, 234, 0.02) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #1d2832 0%, #12171c 55%, #0b0f13 100%) fixed
 
-      ha-card-background: *d-card
+      ha-card-background: "#1b222a"
       ha-card-border-color: *d-divider
       ha-card-box-shadow: "inset 0 2px 0 0 #8fb3c9, inset 0 -1px 0 0 rgba(181,208,224,0.28), 0 3px 10px rgba(0,0,0,0.45), 0 6px 16px -8px rgba(143,179,201,0.16), inset 0 0 0 3px #1b222a, inset 0 0 0 4px rgba(143,179,201,0.35), inset 0 0 22px rgba(0,0,0,0.25)"
-      ha-card-header-color: *d-primary-hi
+      ha-card-header-color: "#b5d0e0"
 
       app-header-background-color: "#161d24"
       app-header-text-color: *d-text
@@ -253,7 +253,7 @@ Winterhold:
       sidebar-text-color: *d-text2
       sidebar-selected-background-color: "rgba(143,179,201,0.14)"
       sidebar-selected-icon-color: *d-primary
-      sidebar-selected-text-color: *d-primary-hi
+      sidebar-selected-text-color: "#b5d0e0"
 
       ha-color-primary-05: "#0f1a22"
       ha-color-primary-10: "#16242e"
@@ -261,77 +261,77 @@ Winterhold:
       ha-color-primary-30: "#2b4658"
       ha-color-primary-40: "#3f6379"
       ha-color-primary-50: "#5f8199"
-      ha-color-primary-60: *d-primary
-      ha-color-primary-70: *d-primary-hi
+      ha-color-primary-60: "#8fb3c9"
+      ha-color-primary-70: "#b5d0e0"
       ha-color-primary-80: "#cfe0ea"
       ha-color-primary-90: "#e3edf3"
       ha-color-primary-95: "#f1f6f9"
 
-      ha-color-neutral-05: *d-bg
-      ha-color-neutral-10: *d-card
-      ha-color-neutral-20: &d-raised "#232c36"
-      ha-color-neutral-30: *d-divider
-      ha-color-neutral-40: *d-line
-      ha-color-neutral-50: *d-muted
+      ha-color-neutral-05: "#12171c"
+      ha-color-neutral-10: "#1b222a"
+      ha-color-neutral-20: "#232c36"
+      ha-color-neutral-30: "#2b353f"
+      ha-color-neutral-40: "#404c57"
+      ha-color-neutral-50: "#677582"
       ha-color-neutral-60: "#738190"
       ha-color-neutral-70: "#82909c"
-      ha-color-neutral-80: *d-text2
+      ha-color-neutral-80: "#93a0ab"
       ha-color-neutral-90: "#c3ced6"
-      ha-color-neutral-95: *d-text
+      ha-color-neutral-95: "#dde5ea"
 
-      error-color: &d-error "#e0705a"
-      warning-color: &d-warning "#e2b24a"
-      success-color: &d-success "#86a65f"
-      info-color: &d-info "#6db3d6"
-      label-badge-red: *d-error
-      label-badge-green: *d-success
-      label-badge-blue: *d-info
-      label-badge-yellow: *d-warning
-      label-badge-grey: *d-muted
+      error-color: "#e0705a"
+      warning-color: "#e2b24a"
+      success-color: "#86a65f"
+      info-color: "#6db3d6"
+      label-badge-red: "#e0705a"
+      label-badge-green: "#86a65f"
+      label-badge-blue: "#6db3d6"
+      label-badge-yellow: "#e2b24a"
+      label-badge-grey: "#677582"
 
       state-icon-color: *d-text2
       state-icon-active-color: *d-primary
-      state-icon-unavailable-color: *d-muted
-      state-light-active-color: &d-light-on "#e8c46a"
+      state-icon-unavailable-color: "#677582"
+      state-light-active-color: "#e8c46a"
       state-switch-active-color: *d-primary
-      state-fan-active-color: &d-cool "#7fa3b5"
-      state-cover-active-color: *d-primary
-      state-media_player-active-color: &d-arcane "#a98cc0"
-      state-lock-locked-color: *d-success
-      state-lock-unlocked-color: *d-warning
-      state-lock-jammed-color: *d-error
-      state-climate-heat-color: &d-heat "#e4672c"
-      state-climate-cool-color: *d-cool
-      state-climate-auto-color: *d-success
-      state-climate-dry-color: *d-warning
-      state-climate-fan_only-color: *d-cool
-      state-climate-off-color: *d-muted
-      state-person-home-color: *d-success
-      state-person-zone-color: *d-warning
-      state-person-not_home-color: *d-muted
-      state-binary_sensor-active-color: *d-warning
-      state-alert-on-color: *d-error
-      state-sun-day-color: *d-light-on
-      state-sun-night-color: *d-arcane
+      state-fan-active-color: "#7fa3b5"
+      state-cover-active-color: "#8fb3c9"
+      state-media_player-active-color: "#a98cc0"
+      state-lock-locked-color: "#86a65f"
+      state-lock-unlocked-color: "#e2b24a"
+      state-lock-jammed-color: "#e0705a"
+      state-climate-heat-color: "#e4672c"
+      state-climate-cool-color: "#7fa3b5"
+      state-climate-auto-color: "#86a65f"
+      state-climate-dry-color: "#e2b24a"
+      state-climate-fan_only-color: "#7fa3b5"
+      state-climate-off-color: "#677582"
+      state-person-home-color: "#86a65f"
+      state-person-zone-color: "#e2b24a"
+      state-person-not_home-color: "#677582"
+      state-binary_sensor-active-color: "#e2b24a"
+      state-alert-on-color: "#e0705a"
+      state-sun-day-color: "#e8c46a"
+      state-sun-night-color: "#a98cc0"
 
       switch-checked-color: *d-primary
-      switch-checked-button-color: *d-primary-hi
-      switch-checked-track-color: &d-track "#3f5c70"
+      switch-checked-button-color: "#b5d0e0"
+      switch-checked-track-color: "#3f5c70"
       ha-switch-checked-border-color: *d-primary
-      switch-unchecked-color: *d-muted
+      switch-unchecked-color: "#677582"
       switch-unchecked-button-color: "#8493a0"
-      switch-unchecked-track-color: *d-divider
+      switch-unchecked-track-color: "#2b353f"
 
       slider-color: *d-primary
-      slider-bar-color: *d-line
-      slider-secondary-color: *d-track
+      slider-bar-color: "#404c57"
+      slider-secondary-color: "#3f5c70"
 
-      input-fill-color: *d-raised
+      input-fill-color: "#232c36"
       input-ink-color: *d-text
       input-label-ink-color: *d-text2
-      input-disabled-ink-color: *d-muted
-      input-idle-line-color: *d-line
-      input-hover-line-color: *d-muted
+      input-disabled-ink-color: "#677582"
+      input-idle-line-color: "#404c57"
+      input-hover-line-color: "#677582"
       input-dropdown-icon-color: *d-text2
       paper-listbox-background-color: "#202932"
       paper-item-icon-color: *d-text2
@@ -340,72 +340,72 @@ Winterhold:
       mdc-theme-secondary: *d-accent
       mdc-theme-surface: *d-card
       mdc-theme-on-surface: *d-text
-      mdc-theme-on-primary: *d-bg
-      mdc-ripple-color: *d-primary
-      mdc-select-fill-color: *d-raised
-      mdc-text-field-fill-color: *d-raised
+      mdc-theme-on-primary: "#12171c"
+      mdc-ripple-color: "#8fb3c9"
+      mdc-select-fill-color: "#232c36"
+      mdc-text-field-fill-color: "#232c36"
       mdc-select-ink-color: *d-text
       mdc-text-field-ink-color: *d-text
 
-      mdc-dialog-heading-ink-color: *d-primary-hi
+      mdc-dialog-heading-ink-color: "#b5d0e0"
       mdc-dialog-content-ink-color: *d-text
       dialog-backdrop-filter: "brightness(55%) blur(4px)"
       ha-dialog-scrim-backdrop-filter: "brightness(55%) blur(4px)"
       mdc-dialog-scrim-color: "rgba(8,15,24,0.72)"
 
-      table-header-background-color: *d-raised
+      table-header-background-color: "#232c36"
       table-row-background-color: *d-card
       table-row-alternative-background-color: "#1f2831"
       code-editor-background-color: "#0e1318"
       markdown-code-background-color: "#0e1318"
-      codemirror-keyword: *d-warning
-      codemirror-operator: *d-heat
-      codemirror-variable: *d-info
-      codemirror-variable-2: *d-success
-      codemirror-variable-3: *d-arcane
-      codemirror-builtin: *d-primary
-      codemirror-atom: *d-arcane
-      codemirror-number: *d-heat
-      codemirror-string: *d-success
-      codemirror-comment: *d-muted
-      codemirror-meta: *d-text2
-      codemirror-property: *d-light-on
-      codemirror-tag: *d-error
-      codemirror-attribute: *d-warning
-      scrollbar-thumb-color: *d-track
+      codemirror-keyword: "#e2b24a"
+      codemirror-operator: "#e4672c"
+      codemirror-variable: "#6db3d6"
+      codemirror-variable-2: "#86a65f"
+      codemirror-variable-3: "#a98cc0"
+      codemirror-builtin: "#8fb3c9"
+      codemirror-atom: "#a98cc0"
+      codemirror-number: "#e4672c"
+      codemirror-string: "#86a65f"
+      codemirror-comment: "#677582"
+      codemirror-meta: "#93a0ab"
+      codemirror-property: "#e8c46a"
+      codemirror-tag: "#e0705a"
+      codemirror-attribute: "#e2b24a"
+      scrollbar-thumb-color: "#3f5c70"
 
-      energy-solar-color: *d-light-on
-      energy-grid-consumption-color: *d-cool
-      energy-grid-return-color: *d-success
-      energy-battery-out-color: *d-arcane
-      energy-battery-in-color: *d-heat
-      energy-gas-color: *d-heat
-      energy-water-color: *d-cool
+      energy-solar-color: "#e8c46a"
+      energy-grid-consumption-color: "#7fa3b5"
+      energy-grid-return-color: "#86a65f"
+      energy-battery-out-color: "#a98cc0"
+      energy-battery-in-color: "#e4672c"
+      energy-gas-color: "#e4672c"
+      energy-water-color: "#7fa3b5"
 
-      graph-color-1: *d-cool
-      graph-color-2: *d-heat
-      graph-color-3: *d-success
-      graph-color-4: *d-arcane
-      graph-color-5: *d-warning
-      graph-color-6: *d-error
-      graph-color-7: *d-primary
-      graph-color-8: *d-text2
-      graph-color-9: *d-accent
-      graph-color-10: *d-light-on
+      graph-color-1: "#7fa3b5"
+      graph-color-2: "#e4672c"
+      graph-color-3: "#86a65f"
+      graph-color-4: "#a98cc0"
+      graph-color-5: "#e2b24a"
+      graph-color-6: "#e0705a"
+      graph-color-7: "#8fb3c9"
+      graph-color-8: "#93a0ab"
+      graph-color-9: "#c9a15a"
+      graph-color-10: "#e8c46a"
 
     light:
       primary-color: &l-primary "#7d5f26"
-      dark-primary-color: &l-primary-dark "#5e4719"
-      light-primary-color: &l-primary-soft "#a98544"
+      dark-primary-color: "#5e4719"
+      light-primary-color: "#a98544"
       accent-color: &l-accent "#556b3f"
-      text-primary-color: &l-card "#f4eedd"
+      text-primary-color: "#f4eedd"
       primary-background-color: &l-bg "#e9e2d0"
-      secondary-background-color: *l-card
+      secondary-background-color: &l-card "#f4eedd"
       card-background-color: *l-card
       primary-text-color: &l-text "#2b2a24"
       secondary-text-color: &l-text2 "#6b6757"
-      disabled-text-color: &l-muted "#9c967f"
-      disabled-color: &l-line "#bdb597"
+      disabled-text-color: "#9c967f"
+      disabled-color: "#bdb597"
       divider-color: &l-divider "#cbbf9f"
       outline-color: *l-divider
       rgb-primary-color: "125, 95, 38"
@@ -424,157 +424,157 @@ Winterhold:
         repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.025) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed
 
-      ha-card-background: *l-card
+      ha-card-background: "#f4eedd"
       ha-card-border-color: *l-divider
       ha-card-box-shadow: "inset 0 2px 0 0 #7d5f26, inset 0 -2px 0 0 rgba(110,85,40,0.22), 0 2px 8px rgba(80,62,28,0.18), 0 5px 12px -6px rgba(90,60,30,0.22), inset 0 0 0 3px #f4eedd, inset 0 0 0 4px rgba(125,95,38,0.35), inset 0 0 22px rgba(125,95,38,0.12)"
-      ha-card-header-color: *l-primary-dark
+      ha-card-header-color: "#5e4719"
 
-      app-header-background-color: &l-chrome "#ddd5bf"
+      app-header-background-color: "#ddd5bf"
       app-header-text-color: *l-text
       app-header-selection-bar-color: *l-primary
       paper-tabs-selection-bar-color: *l-primary
 
-      sidebar-background-color: *l-chrome
+      sidebar-background-color: "#ddd5bf"
       sidebar-icon-color: *l-text2
       sidebar-text-color: *l-text2
       sidebar-selected-background-color: "rgba(125,95,38,0.14)"
       sidebar-selected-icon-color: *l-primary
-      sidebar-selected-text-color: *l-primary-dark
+      sidebar-selected-text-color: "#5e4719"
 
       ha-color-primary-05: "#2a2418"
       ha-color-primary-10: "#362d1c"
       ha-color-primary-20: "#4a3b1f"
-      ha-color-primary-30: *l-primary-dark
-      ha-color-primary-40: *l-primary
-      ha-color-primary-50: *l-primary-soft
+      ha-color-primary-30: "#5e4719"
+      ha-color-primary-40: "#7d5f26"
+      ha-color-primary-50: "#a98544"
       ha-color-primary-60: "#b08d4f"
       ha-color-primary-70: "#d1b277"
-      ha-color-primary-80: *l-chrome
-      ha-color-primary-90: *l-bg
-      ha-color-primary-95: *l-card
+      ha-color-primary-80: "#ddd5bf"
+      ha-color-primary-90: "#e9e2d0"
+      ha-color-primary-95: "#f4eedd"
 
       ha-color-neutral-05: "#1c1f1a"
       ha-color-neutral-10: "#262b24"
       ha-color-neutral-20: "#2f352c"
       ha-color-neutral-30: "#3a4036"
       ha-color-neutral-40: "#4a5045"
-      ha-color-neutral-50: *l-text2
+      ha-color-neutral-50: "#6b6757"
       ha-color-neutral-60: "#a39d88"
-      ha-color-neutral-70: *l-line
-      ha-color-neutral-80: *l-divider
-      ha-color-neutral-90: *l-chrome
-      ha-color-neutral-95: &l-raised "#ece4cf"
+      ha-color-neutral-70: "#bdb597"
+      ha-color-neutral-80: "#cbbf9f"
+      ha-color-neutral-90: "#ddd5bf"
+      ha-color-neutral-95: "#ece4cf"
 
-      error-color: &l-error "#9a3b2e"
-      warning-color: &l-warning "#a97618"
-      success-color: &l-success "#55703a"
-      info-color: &l-info "#4a7189"
-      label-badge-red: *l-error
-      label-badge-green: *l-success
-      label-badge-blue: *l-info
-      label-badge-yellow: *l-warning
-      label-badge-grey: *l-muted
+      error-color: "#9a3b2e"
+      warning-color: "#a97618"
+      success-color: "#55703a"
+      info-color: "#4a7189"
+      label-badge-red: "#9a3b2e"
+      label-badge-green: "#55703a"
+      label-badge-blue: "#4a7189"
+      label-badge-yellow: "#a97618"
+      label-badge-grey: "#9c967f"
 
       state-icon-color: *l-text2
       state-icon-active-color: *l-primary
-      state-icon-unavailable-color: *l-muted
-      state-light-active-color: &l-light-on "#c48a12"
+      state-icon-unavailable-color: "#9c967f"
+      state-light-active-color: "#c48a12"
       state-switch-active-color: *l-primary
-      state-fan-active-color: *l-info
-      state-cover-active-color: *l-primary
-      state-media_player-active-color: &l-arcane "#6c5290"
-      state-lock-locked-color: *l-success
-      state-lock-unlocked-color: *l-warning
-      state-lock-jammed-color: *l-error
-      state-climate-heat-color: &l-heat "#b4571f"
-      state-climate-cool-color: *l-info
-      state-climate-auto-color: *l-success
-      state-climate-dry-color: *l-warning
-      state-climate-fan_only-color: *l-info
-      state-climate-off-color: *l-muted
-      state-person-home-color: *l-success
-      state-person-zone-color: *l-warning
-      state-person-not_home-color: *l-muted
-      state-binary_sensor-active-color: *l-warning
-      state-alert-on-color: *l-error
-      state-sun-day-color: *l-light-on
-      state-sun-night-color: *l-arcane
+      state-fan-active-color: "#4a7189"
+      state-cover-active-color: "#7d5f26"
+      state-media_player-active-color: "#6c5290"
+      state-lock-locked-color: "#55703a"
+      state-lock-unlocked-color: "#a97618"
+      state-lock-jammed-color: "#9a3b2e"
+      state-climate-heat-color: "#b4571f"
+      state-climate-cool-color: "#4a7189"
+      state-climate-auto-color: "#55703a"
+      state-climate-dry-color: "#a97618"
+      state-climate-fan_only-color: "#4a7189"
+      state-climate-off-color: "#9c967f"
+      state-person-home-color: "#55703a"
+      state-person-zone-color: "#a97618"
+      state-person-not_home-color: "#9c967f"
+      state-binary_sensor-active-color: "#a97618"
+      state-alert-on-color: "#9a3b2e"
+      state-sun-day-color: "#c48a12"
+      state-sun-night-color: "#6c5290"
 
       switch-checked-color: *l-primary
-      switch-checked-button-color: *l-card
-      switch-checked-track-color: *l-primary-soft
+      switch-checked-button-color: "#f4eedd"
+      switch-checked-track-color: "#a98544"
       ha-switch-checked-border-color: *l-primary
-      switch-unchecked-color: *l-muted
-      switch-unchecked-button-color: *l-card
-      switch-unchecked-track-color: *l-line
+      switch-unchecked-color: "#9c967f"
+      switch-unchecked-button-color: "#f4eedd"
+      switch-unchecked-track-color: "#bdb597"
 
       slider-color: *l-primary
-      slider-bar-color: *l-divider
-      slider-secondary-color: *l-primary-soft
+      slider-bar-color: "#cbbf9f"
+      slider-secondary-color: "#a98544"
 
-      input-fill-color: *l-raised
+      input-fill-color: "#ece4cf"
       input-ink-color: *l-text
       input-label-ink-color: *l-text2
-      input-disabled-ink-color: *l-muted
-      input-idle-line-color: *l-line
-      input-hover-line-color: *l-muted
+      input-disabled-ink-color: "#9c967f"
+      input-idle-line-color: "#bdb597"
+      input-hover-line-color: "#9c967f"
       input-dropdown-icon-color: *l-text2
-      paper-listbox-background-color: *l-card
+      paper-listbox-background-color: "#f4eedd"
       paper-item-icon-color: *l-text2
       paper-item-icon-active-color: *l-primary
       mdc-theme-primary: *l-primary
       mdc-theme-secondary: *l-accent
       mdc-theme-surface: *l-card
       mdc-theme-on-surface: *l-text
-      mdc-theme-on-primary: *l-card
-      mdc-ripple-color: *l-primary
-      mdc-select-fill-color: *l-raised
-      mdc-text-field-fill-color: *l-raised
+      mdc-theme-on-primary: "#f4eedd"
+      mdc-ripple-color: "#7d5f26"
+      mdc-select-fill-color: "#ece4cf"
+      mdc-text-field-fill-color: "#ece4cf"
       mdc-select-ink-color: *l-text
       mdc-text-field-ink-color: *l-text
 
-      mdc-dialog-heading-ink-color: *l-primary-dark
+      mdc-dialog-heading-ink-color: "#5e4719"
       mdc-dialog-content-ink-color: *l-text
       dialog-backdrop-filter: "brightness(70%) blur(4px)"
       ha-dialog-scrim-backdrop-filter: "brightness(70%) blur(4px)"
       mdc-dialog-scrim-color: "rgba(72,50,24,0.58)"
 
-      table-header-background-color: *l-raised
+      table-header-background-color: "#ece4cf"
       table-row-background-color: *l-card
       table-row-alternative-background-color: "#efe8d5"
       code-editor-background-color: "#efe8d5"
       markdown-code-background-color: "#e2dac4"
-      codemirror-keyword: *l-warning
-      codemirror-operator: *l-heat
-      codemirror-variable: *l-info
-      codemirror-variable-2: *l-success
-      codemirror-variable-3: *l-arcane
-      codemirror-builtin: *l-primary
-      codemirror-atom: *l-arcane
-      codemirror-number: *l-heat
-      codemirror-string: *l-success
-      codemirror-comment: *l-muted
-      codemirror-meta: *l-text2
+      codemirror-keyword: "#a97618"
+      codemirror-operator: "#b4571f"
+      codemirror-variable: "#4a7189"
+      codemirror-variable-2: "#55703a"
+      codemirror-variable-3: "#6c5290"
+      codemirror-builtin: "#7d5f26"
+      codemirror-atom: "#6c5290"
+      codemirror-number: "#b4571f"
+      codemirror-string: "#55703a"
+      codemirror-comment: "#9c967f"
+      codemirror-meta: "#6b6757"
       codemirror-property: "#8a6a2f"
-      codemirror-tag: *l-error
-      codemirror-attribute: *l-warning
-      scrollbar-thumb-color: *l-primary-soft
+      codemirror-tag: "#9a3b2e"
+      codemirror-attribute: "#a97618"
+      scrollbar-thumb-color: "#a98544"
 
-      energy-solar-color: *l-light-on
-      energy-grid-consumption-color: *l-info
-      energy-grid-return-color: *l-success
-      energy-battery-out-color: *l-arcane
-      energy-battery-in-color: *l-heat
-      energy-gas-color: *l-heat
-      energy-water-color: *l-info
+      energy-solar-color: "#c48a12"
+      energy-grid-consumption-color: "#4a7189"
+      energy-grid-return-color: "#55703a"
+      energy-battery-out-color: "#6c5290"
+      energy-battery-in-color: "#b4571f"
+      energy-gas-color: "#b4571f"
+      energy-water-color: "#4a7189"
 
-      graph-color-1: *l-info
-      graph-color-2: *l-heat
-      graph-color-3: *l-success
-      graph-color-4: *l-arcane
-      graph-color-5: *l-warning
-      graph-color-6: *l-error
-      graph-color-7: *l-primary
-      graph-color-8: *l-text2
-      graph-color-9: *l-accent
-      graph-color-10: *l-light-on
+      graph-color-1: "#4a7189"
+      graph-color-2: "#b4571f"
+      graph-color-3: "#55703a"
+      graph-color-4: "#6c5290"
+      graph-color-5: "#a97618"
+      graph-color-6: "#9a3b2e"
+      graph-color-7: "#7d5f26"
+      graph-color-8: "#6b6757"
+      graph-color-9: "#556b3f"
+      graph-color-10: "#c48a12"
