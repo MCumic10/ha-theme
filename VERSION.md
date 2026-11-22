@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.3.2**
+**Current version: 2.3.3**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.3.3] - 2026-11-22
+- Test: removed all card-mod keys from the theme (card-mod-theme, -card-yaml, -root, -sidebar, -more-info-yaml) to isolate card-mod issues. Ornaments and tile effects from 2.2.0-2.3.0 are inactive until restored (see git history).
 
 ### [2.3.2] - 2026-11-22
 - Refactor: repeated palette colors in dark/light modes are now YAML anchors with role names (d-*/l-*); resolved values are unchanged.
