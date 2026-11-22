@@ -1,19 +1,9 @@
-# Winterhold - Home Assistant theme
-# Natural, earthy fantasy palette (Elder Scrolls / Skyrim inspired):
-# light = aged parchment and gold, dark = cold slate night and frost.
-# Palette table lives in CLAUDE.md - keep in sync.
-# Anchors (d-* dark, l-* light) are defined inline at first use.
-
 Winterhold:
-  # ================= Shared (both modes) =================
-  # Typography: serif stack, available on Windows/macOS/Linux/Android/iOS
   primary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   secondary-font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-common-base_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   paper-font-body1_-_font-family: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
-  # Headings: Cinzel / Trajan Pro (carved Roman capitals) are used only if installed on the device, else Georgia
   paper-font-headline_-_font-family: "Cinzel, 'Trajan Pro', Georgia, 'Palatino Linotype', serif"
-  # Newer HA (2025.x+) reads the ha-font-family-* tokens instead of the paper-font-* / primary-font-family ones above
   ha-font-family-body: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
   ha-font-family-heading: "Cinzel, 'Trajan Pro', Georgia, 'Palatino Linotype', serif"
   ha-font-family-longform: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
@@ -21,7 +11,6 @@ Winterhold:
   ha-card-header-font-size: 20px
   ha-card-header-font-weight: "600"
 
-  # Shape: carved-stone feel, near-square corners with thin borders
   ha-card-border-radius: 4px
   ha-card-border-width: 1px
   ha-button-border-radius: 3px
@@ -33,15 +22,9 @@ Winterhold:
   mdc-shape-small: 2px
   mdc-shape-large: 6px
 
-  # ================= card-mod (requires card-mod from HACS) =================
-  # Ignored by Home Assistant if card-mod is not installed.
-  # Uses theme variables only, so it follows light/dark automatically.
-  # card-mod requires this key to equal the theme name.
   card-mod-theme: Winterhold
-  # card-mod: ONE yaml-form key for cards (card-mod ignores plain card-mod-card when -yaml exists). "." = the card itself.
   card-mod-card-yaml: |
     .: |
-      /* Corner flourishes: gold L-brackets on the four corners, sitting on the inner hairline (click-through) */
       ha-card::before {
         content: "";
         position: absolute;
@@ -58,7 +41,6 @@ Winterhold:
           linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 14px 1px no-repeat,
           linear-gradient(var(--primary-color), var(--primary-color)) bottom right / 1px 14px no-repeat;
       }
-      /* Title ornament: small diamond at the start of the gold rule */
       .card-header {
         position: relative;
       }
@@ -71,8 +53,6 @@ Winterhold:
         line-height: 1;
         color: var(--primary-color);
       }
-      /* Tile cards (HA sets ha-card.active and data-domain/data-state on ha-tile-icon):
-         active icons glow in their state color (candlelight lights, ember heat, frost cooling, primary-colored switches) */
       ha-card.active ha-tile-icon {
         filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tile-color) 55%, transparent));
         transition: filter 0.3s ease;
@@ -80,7 +60,6 @@ Winterhold:
       ha-tile-icon[data-domain="light"][data-state="on"] {
         filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent));
       }
-      /* Heating climate: slow ember pulse (skipped when the user prefers reduced motion) */
       @keyframes nf-ember-pulse {
         0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 45%, transparent)); }
         50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 85%, transparent)); }
@@ -90,8 +69,6 @@ Winterhold:
           animation: nf-ember-pulse 3s ease-in-out infinite;
         }
       }
-      /* Phase 3 tile effects (all slow, all disabled under prefers-reduced-motion) */
-      /* Lights: candle flicker, irregular timing so it does not look like a pulse */
       @keyframes nf-candle {
         0%   { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tile-color) 70%, transparent)); }
         14%  { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 80%, transparent)); }
@@ -102,17 +79,14 @@ Winterhold:
         89%  { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 74%, transparent)); }
         100% { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tile-color) 70%, transparent)); }
       }
-      /* Cooling: cold breath, slower and bluer than the ember pulse */
       @keyframes nf-frost {
         0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 40%, transparent)); }
         50%      { filter: drop-shadow(0 0 9px color-mix(in srgb, var(--tile-color) 75%, transparent)); }
       }
-      /* Playing media: arcane shimmer, glow breathes while the hue drifts a little */
       @keyframes nf-arcane {
         0%, 100% { filter: drop-shadow(0 0 4px color-mix(in srgb, var(--tile-color) 50%, transparent)) hue-rotate(0deg); }
         50%      { filter: drop-shadow(0 0 10px color-mix(in srgb, var(--tile-color) 80%, transparent)) hue-rotate(-18deg); }
       }
-      /* Alerts: slow, low-key red pulse */
       @keyframes nf-alert {
         0%, 100% { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tile-color) 50%, transparent)); }
         50%      { filter: drop-shadow(0 0 12px color-mix(in srgb, var(--tile-color) 90%, transparent)); }
@@ -131,7 +105,6 @@ Winterhold:
           animation: nf-alert 2.4s ease-in-out infinite;
         }
       }
-      /* Locks: sealed = steady moss glow, unsealed = amber glow */
       ha-tile-icon[data-domain="lock"][data-state="locked"] {
         filter: drop-shadow(0 0 6px color-mix(in srgb, var(--tile-color) 55%, transparent));
       }
@@ -141,30 +114,25 @@ Winterhold:
       ha-card:has(ha-tile-icon[data-domain="lock"][data-state="unlocked"]) {
         border-color: var(--warning-color);
       }
-      /* Active tile: faint inner glow in the state color, layered on top of the themed card frame */
       ha-card.active {
         box-shadow: var(--ha-card-box-shadow), inset 0 0 18px color-mix(in srgb, var(--tile-color) 14%, transparent);
       }
-      /* Glance card: faint gold wash under the hovered entity (best effort) */
       .entity:hover {
         background-color: rgba(var(--rgb-primary-color), 0.07);
         border-radius: 3px;
       }
-      /* Hover: card border lights up gold; entity rows get a faint gold wash */
       ha-card {
         transition: border-color 0.25s ease, box-shadow 0.25s ease;
       }
       ha-card:hover {
         border-color: var(--primary-color);
       }
-      /* Row dividers: gold hairline fading out at both ends (entities-style cards) */
       #states > *:not(:last-child) {
         background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.45), transparent) bottom / 100% 1px no-repeat;
       }
       #states > *:hover {
         background-color: rgba(var(--rgb-primary-color), 0.07);
       }
-      /* Card titles: small caps + gold rule that fades out to the right, with a small flourish before the text */
       .card-header::before {
         content: "\2756";
         color: var(--primary-color);
@@ -197,11 +165,9 @@ Winterhold:
         linear-gradient(to bottom, rgba(var(--rgb-primary-color), 0.08), transparent),
         repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px);
     }
-    /* Active tab: soft pressed-in wash under the gold underline */
     ha-tab[active] {
       background-image: linear-gradient(to bottom, transparent, rgba(var(--rgb-primary-color), 0.12));
     }
-    /* Focus ring: gold instead of the browser default grey (best effort; ha-tab sets no focus style) */
     ha-tab:focus-visible,
     ha-tab:focus {
       outline: 1px solid var(--primary-color);
@@ -216,7 +182,6 @@ Winterhold:
         repeating-linear-gradient(0deg, rgba(var(--rgb-primary-color), 0.03) 0 1px, transparent 1px 4px);
       box-shadow: inset -8px 0 12px -8px rgba(0, 0, 0, 0.25);
     }
-    /* Selected item: gold bar on the left edge and a slight engraved inset */
     ha-list-item-button.selected {
       box-shadow: inset 3px 0 0 var(--primary-color), inset 0 1px 3px rgba(0, 0, 0, 0.18);
       border-radius: 4px;
@@ -226,14 +191,12 @@ Winterhold:
       letter-spacing: 0.06em;
       color: var(--sidebar-selected-text-color);
     }
-    /* Group dividers: gold hairline fading out at both ends instead of a plain rule */
     .divider {
       border-bottom: none !important;
       height: 1px;
       margin: 6px 12px;
       background: linear-gradient(to right, transparent, rgba(var(--rgb-primary-color), 0.6), transparent);
     }
-  # -yaml form so the dialog's shadow root can be reached with "$". (The old non-yaml key held YAML text, which is not valid CSS.)
   card-mod-more-info-yaml: |
     $: |
       .mdc-dialog .mdc-dialog__surface {
@@ -243,21 +206,19 @@ Winterhold:
       }
 
   modes:
-    # ===================== DARK =====================
     dark:
-      # Core
-      primary-color: &d-primary "#8fb3c9"           # frost
+      primary-color: &d-primary "#8fb3c9"
       dark-primary-color: "#5f8199"
-      light-primary-color: "#b5d0e0"
-      accent-color: &d-accent "#c9a15a"             # gold
-      text-primary-color: "#12171c"                 # text on frost fills
-      primary-background-color: &d-bg "#12171c"     # slate-black
-      secondary-background-color: &d-card "#1b222a" # dark slate
+      light-primary-color: &d-primary-hi "#b5d0e0"
+      accent-color: &d-accent "#c9a15a"
+      text-primary-color: &d-bg "#12171c"
+      primary-background-color: *d-bg
+      secondary-background-color: &d-card "#1b222a"
       card-background-color: *d-card
       primary-text-color: &d-text "#dde5ea"
       secondary-text-color: &d-text2 "#93a0ab"
-      disabled-text-color: "#677582"
-      disabled-color: "#404c57"
+      disabled-text-color: &d-muted "#677582"
+      disabled-color: &d-line "#404c57"
       divider-color: &d-divider "#2b353f"
       outline-color: *d-divider
       rgb-primary-color: "143, 179, 201"
@@ -267,9 +228,6 @@ Winterhold:
       rgb-card-background-color: "27, 34, 42"
       rgb-primary-background-color: "18, 23, 28"
 
-      # Background: Winterhold, cold slate night with a faint frost glow
-      # Layers (top to bottom): edge vignette, faint frost/gold blotches, faint lines, base gradient.
-      # Pure CSS gradients, same structure as light mode.
       lovelace-background: >-
         radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.4) 100%) fixed,
         radial-gradient(ellipse 60% 40% at 15% 20%, rgba(143, 179, 201, 0.07), transparent 70%) fixed,
@@ -280,111 +238,100 @@ Winterhold:
         repeating-linear-gradient(0deg, rgba(221, 229, 234, 0.02) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #1d2832 0%, #12171c 55%, #0b0f13 100%) fixed
 
-      # Cards: ha-card-background MUST stay a plain color (HA charts read it as a color).
-      # Layers: gold top rule, drop shadow, inner gold hairline 3px in (double rule), soft dark inner edge
-      ha-card-background: "#1b222a"
+      ha-card-background: *d-card
       ha-card-border-color: *d-divider
       ha-card-box-shadow: "inset 0 2px 0 0 #8fb3c9, inset 0 -1px 0 0 rgba(181,208,224,0.28), 0 3px 10px rgba(0,0,0,0.45), 0 6px 16px -8px rgba(143,179,201,0.16), inset 0 0 0 3px #1b222a, inset 0 0 0 4px rgba(143,179,201,0.35), inset 0 0 22px rgba(0,0,0,0.25)"
-      ha-card-header-color: "#b5d0e0"
+      ha-card-header-color: *d-primary-hi
 
-      # Header / toolbar / tabs
       app-header-background-color: "#161d24"
       app-header-text-color: *d-text
       app-header-selection-bar-color: *d-primary
       paper-tabs-selection-bar-color: *d-primary
 
-      # Sidebar
       sidebar-background-color: "#0d1217"
       sidebar-icon-color: *d-text2
       sidebar-text-color: *d-text2
       sidebar-selected-background-color: "rgba(143,179,201,0.14)"
       sidebar-selected-icon-color: *d-primary
-      sidebar-selected-text-color: "#b5d0e0"
+      sidebar-selected-text-color: *d-primary-hi
 
-      # HA primary scale (dark): frost blue ramp. Dark mode uses 05/10/20 for tinted fills, 40 for loud fills, 60/70 for text.
       ha-color-primary-05: "#0f1a22"
       ha-color-primary-10: "#16242e"
       ha-color-primary-20: "#1f3441"
       ha-color-primary-30: "#2b4658"
       ha-color-primary-40: "#3f6379"
       ha-color-primary-50: "#5f8199"
-      ha-color-primary-60: "#8fb3c9"
-      ha-color-primary-70: "#b5d0e0"
+      ha-color-primary-60: *d-primary
+      ha-color-primary-70: *d-primary-hi
       ha-color-primary-80: "#cfe0ea"
       ha-color-primary-90: "#e3edf3"
       ha-color-primary-95: "#f1f6f9"
 
-      # HA neutral scale (dark): 05/10 surfaces, 80 secondary text, 95 primary text (see HA semantic tokens)
-      ha-color-neutral-05: "#12171c"
-      ha-color-neutral-10: "#1b222a"
-      ha-color-neutral-20: "#232c36"
-      ha-color-neutral-30: "#2b353f"
-      ha-color-neutral-40: "#404c57"
-      ha-color-neutral-50: "#677582"
+      ha-color-neutral-05: *d-bg
+      ha-color-neutral-10: *d-card
+      ha-color-neutral-20: &d-raised "#232c36"
+      ha-color-neutral-30: *d-divider
+      ha-color-neutral-40: *d-line
+      ha-color-neutral-50: *d-muted
       ha-color-neutral-60: "#738190"
       ha-color-neutral-70: "#82909c"
-      ha-color-neutral-80: "#93a0ab"
+      ha-color-neutral-80: *d-text2
       ha-color-neutral-90: "#c3ced6"
-      ha-color-neutral-95: "#dde5ea"
+      ha-color-neutral-95: *d-text
 
-      # Semantic
-      error-color: "#e0705a"                        # ember red
-      warning-color: "#e2b24a"                      # amber
-      success-color: "#86a65f"                      # spring moss
-      info-color: "#6db3d6"                         # frost
-      label-badge-red: "#e0705a"
-      label-badge-green: "#86a65f"
-      label-badge-blue: "#6db3d6"
-      label-badge-yellow: "#e2b24a"
-      label-badge-grey: "#677582"
+      error-color: &d-error "#e0705a"
+      warning-color: &d-warning "#e2b24a"
+      success-color: &d-success "#86a65f"
+      info-color: &d-info "#6db3d6"
+      label-badge-red: *d-error
+      label-badge-green: *d-success
+      label-badge-blue: *d-info
+      label-badge-yellow: *d-warning
+      label-badge-grey: *d-muted
 
-      # Entity state colors
       state-icon-color: *d-text2
       state-icon-active-color: *d-primary
-      state-icon-unavailable-color: "#677582"
-      state-light-active-color: "#e8c46a"           # candlelight
-      state-switch-active-color: *d-primary         # matches the toggle
-      state-fan-active-color: "#7fa3b5"
-      state-cover-active-color: "#8fb3c9"
-      state-media_player-active-color: "#a98cc0"    # arcane
-      state-lock-locked-color: "#86a65f"
-      state-lock-unlocked-color: "#e2b24a"
-      state-lock-jammed-color: "#e0705a"
-      state-climate-heat-color: "#e4672c"           # ember
-      state-climate-cool-color: "#7fa3b5"           # frost
-      state-climate-auto-color: "#86a65f"
-      state-climate-dry-color: "#e2b24a"
-      state-climate-fan_only-color: "#7fa3b5"
-      state-climate-off-color: "#677582"
-      state-person-home-color: "#86a65f"
-      state-person-zone-color: "#e2b24a"
-      state-person-not_home-color: "#677582"
-      state-binary_sensor-active-color: "#e2b24a"
-      state-alert-on-color: "#e0705a"
-      state-sun-day-color: "#e8c46a"
-      state-sun-night-color: "#a98cc0"
+      state-icon-unavailable-color: *d-muted
+      state-light-active-color: &d-light-on "#e8c46a"
+      state-switch-active-color: *d-primary
+      state-fan-active-color: &d-cool "#7fa3b5"
+      state-cover-active-color: *d-primary
+      state-media_player-active-color: &d-arcane "#a98cc0"
+      state-lock-locked-color: *d-success
+      state-lock-unlocked-color: *d-warning
+      state-lock-jammed-color: *d-error
+      state-climate-heat-color: &d-heat "#e4672c"
+      state-climate-cool-color: *d-cool
+      state-climate-auto-color: *d-success
+      state-climate-dry-color: *d-warning
+      state-climate-fan_only-color: *d-cool
+      state-climate-off-color: *d-muted
+      state-person-home-color: *d-success
+      state-person-zone-color: *d-warning
+      state-person-not_home-color: *d-muted
+      state-binary_sensor-active-color: *d-warning
+      state-alert-on-color: *d-error
+      state-sun-day-color: *d-light-on
+      state-sun-night-color: *d-arcane
 
-      # Switches
       switch-checked-color: *d-primary
-      switch-checked-button-color: "#b5d0e0"
-      switch-checked-track-color: "#3f5c70"
+      switch-checked-button-color: *d-primary-hi
+      switch-checked-track-color: &d-track "#3f5c70"
       ha-switch-checked-border-color: *d-primary
-      switch-unchecked-color: "#677582"
+      switch-unchecked-color: *d-muted
       switch-unchecked-button-color: "#8493a0"
-      switch-unchecked-track-color: "#2b353f"
+      switch-unchecked-track-color: *d-divider
 
-      # Sliders
       slider-color: *d-primary
-      slider-bar-color: "#404c57"
-      slider-secondary-color: "#3f5c70"
+      slider-bar-color: *d-line
+      slider-secondary-color: *d-track
 
-      # Inputs, lists, menus
-      input-fill-color: "#232c36"
+      input-fill-color: *d-raised
       input-ink-color: *d-text
       input-label-ink-color: *d-text2
-      input-disabled-ink-color: "#677582"
-      input-idle-line-color: "#404c57"
-      input-hover-line-color: "#677582"
+      input-disabled-ink-color: *d-muted
+      input-idle-line-color: *d-line
+      input-hover-line-color: *d-muted
       input-dropdown-icon-color: *d-text2
       paper-listbox-background-color: "#202932"
       paper-item-icon-color: *d-text2
@@ -393,78 +340,72 @@ Winterhold:
       mdc-theme-secondary: *d-accent
       mdc-theme-surface: *d-card
       mdc-theme-on-surface: *d-text
-      mdc-theme-on-primary: "#12171c"
-      mdc-ripple-color: "#8fb3c9"
-      mdc-select-fill-color: "#232c36"
-      mdc-text-field-fill-color: "#232c36"
+      mdc-theme-on-primary: *d-bg
+      mdc-ripple-color: *d-primary
+      mdc-select-fill-color: *d-raised
+      mdc-text-field-fill-color: *d-raised
       mdc-select-ink-color: *d-text
       mdc-text-field-ink-color: *d-text
 
-      # Dialogs
-      mdc-dialog-heading-ink-color: "#b5d0e0"
+      mdc-dialog-heading-ink-color: *d-primary-hi
       mdc-dialog-content-ink-color: *d-text
       dialog-backdrop-filter: "brightness(55%) blur(4px)"
       ha-dialog-scrim-backdrop-filter: "brightness(55%) blur(4px)"
-      mdc-dialog-scrim-color: "rgba(8,15,24,0.72)"   # frosted night blue
+      mdc-dialog-scrim-color: "rgba(8,15,24,0.72)"
 
-      # Tables, code, markdown
-      table-header-background-color: "#232c36"
+      table-header-background-color: *d-raised
       table-row-background-color: *d-card
       table-row-alternative-background-color: "#1f2831"
       code-editor-background-color: "#0e1318"
       markdown-code-background-color: "#0e1318"
-      codemirror-keyword: "#e2b24a"
-      codemirror-operator: "#e4672c"
-      codemirror-variable: "#6db3d6"
-      codemirror-variable-2: "#86a65f"
-      codemirror-variable-3: "#a98cc0"
-      codemirror-builtin: "#8fb3c9"
-      codemirror-atom: "#a98cc0"
-      codemirror-number: "#e4672c"
-      codemirror-string: "#86a65f"
-      codemirror-comment: "#677582"
-      codemirror-meta: "#93a0ab"
-      codemirror-property: "#e8c46a"
-      codemirror-tag: "#e0705a"
-      codemirror-attribute: "#e2b24a"
-      scrollbar-thumb-color: "#3f5c70"
+      codemirror-keyword: *d-warning
+      codemirror-operator: *d-heat
+      codemirror-variable: *d-info
+      codemirror-variable-2: *d-success
+      codemirror-variable-3: *d-arcane
+      codemirror-builtin: *d-primary
+      codemirror-atom: *d-arcane
+      codemirror-number: *d-heat
+      codemirror-string: *d-success
+      codemirror-comment: *d-muted
+      codemirror-meta: *d-text2
+      codemirror-property: *d-light-on
+      codemirror-tag: *d-error
+      codemirror-attribute: *d-warning
+      scrollbar-thumb-color: *d-track
 
-      # Energy dashboard
-      energy-solar-color: "#e8c46a"
-      energy-grid-consumption-color: "#7fa3b5"
-      energy-grid-return-color: "#86a65f"
-      energy-battery-out-color: "#a98cc0"
-      energy-battery-in-color: "#e4672c"
-      energy-gas-color: "#e4672c"
-      energy-water-color: "#7fa3b5"
+      energy-solar-color: *d-light-on
+      energy-grid-consumption-color: *d-cool
+      energy-grid-return-color: *d-success
+      energy-battery-out-color: *d-arcane
+      energy-battery-in-color: *d-heat
+      energy-gas-color: *d-heat
+      energy-water-color: *d-cool
 
-      # History/line graph series: palette colors (frost, ember, moss, arcane, amber, red, gold, ...)
-      graph-color-1: "#7fa3b5"
-      graph-color-2: "#e4672c"
-      graph-color-3: "#86a65f"
-      graph-color-4: "#a98cc0"
-      graph-color-5: "#e2b24a"
-      graph-color-6: "#e0705a"
-      graph-color-7: "#8fb3c9"
-      graph-color-8: "#93a0ab"
-      graph-color-9: "#c9a15a"
-      graph-color-10: "#e8c46a"
+      graph-color-1: *d-cool
+      graph-color-2: *d-heat
+      graph-color-3: *d-success
+      graph-color-4: *d-arcane
+      graph-color-5: *d-warning
+      graph-color-6: *d-error
+      graph-color-7: *d-primary
+      graph-color-8: *d-text2
+      graph-color-9: *d-accent
+      graph-color-10: *d-light-on
 
-    # ===================== LIGHT =====================
     light:
-      # Core
-      primary-color: &l-primary "#7d5f26"           # dark gold
-      dark-primary-color: "#5e4719"
-      light-primary-color: "#a98544"
-      accent-color: &l-accent "#556b3f"             # moss
-      text-primary-color: "#f4eedd"
-      primary-background-color: &l-bg "#e9e2d0"     # parchment
-      secondary-background-color: &l-card "#f4eedd"
+      primary-color: &l-primary "#7d5f26"
+      dark-primary-color: &l-primary-dark "#5e4719"
+      light-primary-color: &l-primary-soft "#a98544"
+      accent-color: &l-accent "#556b3f"
+      text-primary-color: &l-card "#f4eedd"
+      primary-background-color: &l-bg "#e9e2d0"
+      secondary-background-color: *l-card
       card-background-color: *l-card
       primary-text-color: &l-text "#2b2a24"
       secondary-text-color: &l-text2 "#6b6757"
-      disabled-text-color: "#9c967f"
-      disabled-color: "#bdb597"
+      disabled-text-color: &l-muted "#9c967f"
+      disabled-color: &l-line "#bdb597"
       divider-color: &l-divider "#cbbf9f"
       outline-color: *l-divider
       rgb-primary-color: "125, 95, 38"
@@ -474,8 +415,6 @@ Winterhold:
       rgb-card-background-color: "244, 238, 221"
       rgb-primary-background-color: "233, 226, 208"
 
-      # Layers (top to bottom): edge vignette, soft aged blotches, faint laid-paper lines, base gradient.
-      # Pure CSS gradients (no SVG noise: noise textures showed tile seams). Alpha stays low for text contrast.
       lovelace-background: >-
         radial-gradient(ellipse at center, transparent 55%, rgba(110, 85, 40, 0.16) 100%) fixed,
         radial-gradient(ellipse 60% 40% at 15% 20%, rgba(150, 115, 55, 0.07), transparent 70%) fixed,
@@ -485,173 +424,157 @@ Winterhold:
         repeating-linear-gradient(0deg, rgba(110, 85, 40, 0.025) 0 1px, transparent 1px 4px) fixed,
         radial-gradient(ellipse at top, #f1ebd8 0%, #e9e2d0 55%, #ddd5bf 100%) fixed
 
-      # Cards: MUST stay a plain color. HA charts read --ha-card-background as a color (label outline)
-      # and as their own background; gradients here break chart labels. Decor lives in box-shadow + card-mod.
-      ha-card-background: "#f4eedd"
+      ha-card-background: *l-card
       ha-card-border-color: *l-divider
-      # Layers: gold top rule, drop shadow, inner gold hairline framed 3px in (double rule), soft aged inner edge
       ha-card-box-shadow: "inset 0 2px 0 0 #7d5f26, inset 0 -2px 0 0 rgba(110,85,40,0.22), 0 2px 8px rgba(80,62,28,0.18), 0 5px 12px -6px rgba(90,60,30,0.22), inset 0 0 0 3px #f4eedd, inset 0 0 0 4px rgba(125,95,38,0.35), inset 0 0 22px rgba(125,95,38,0.12)"
-      ha-card-header-color: "#5e4719"
+      ha-card-header-color: *l-primary-dark
 
-      # Header / toolbar / tabs
-      app-header-background-color: "#ddd5bf"
+      app-header-background-color: &l-chrome "#ddd5bf"
       app-header-text-color: *l-text
       app-header-selection-bar-color: *l-primary
       paper-tabs-selection-bar-color: *l-primary
 
-      # Sidebar
-      sidebar-background-color: "#ddd5bf"
+      sidebar-background-color: *l-chrome
       sidebar-icon-color: *l-text2
       sidebar-text-color: *l-text2
       sidebar-selected-background-color: "rgba(125,95,38,0.14)"
       sidebar-selected-icon-color: *l-primary
-      sidebar-selected-text-color: "#5e4719"
+      sidebar-selected-text-color: *l-primary-dark
 
-      # HA primary scale (light): gold ramp, dark to light. Buttons, switches and other primary fills derive from it.
       ha-color-primary-05: "#2a2418"
       ha-color-primary-10: "#362d1c"
       ha-color-primary-20: "#4a3b1f"
-      ha-color-primary-30: "#5e4719"
-      ha-color-primary-40: "#7d5f26"
-      ha-color-primary-50: "#a98544"
+      ha-color-primary-30: *l-primary-dark
+      ha-color-primary-40: *l-primary
+      ha-color-primary-50: *l-primary-soft
       ha-color-primary-60: "#b08d4f"
       ha-color-primary-70: "#d1b277"
-      ha-color-primary-80: "#ddd5bf"
-      ha-color-primary-90: "#e9e2d0"
-      ha-color-primary-95: "#f4eedd"
+      ha-color-primary-80: *l-chrome
+      ha-color-primary-90: *l-bg
+      ha-color-primary-95: *l-card
 
-      # HA neutral scale (light): 95 form fields/surfaces, 90 hover, 80 disabled fill, 05 text
       ha-color-neutral-05: "#1c1f1a"
       ha-color-neutral-10: "#262b24"
       ha-color-neutral-20: "#2f352c"
       ha-color-neutral-30: "#3a4036"
       ha-color-neutral-40: "#4a5045"
-      ha-color-neutral-50: "#6b6757"
+      ha-color-neutral-50: *l-text2
       ha-color-neutral-60: "#a39d88"
-      ha-color-neutral-70: "#bdb597"
-      ha-color-neutral-80: "#cbbf9f"
-      ha-color-neutral-90: "#ddd5bf"
-      ha-color-neutral-95: "#ece4cf"
+      ha-color-neutral-70: *l-line
+      ha-color-neutral-80: *l-divider
+      ha-color-neutral-90: *l-chrome
+      ha-color-neutral-95: &l-raised "#ece4cf"
 
-      # Semantic
-      error-color: "#9a3b2e"
-      warning-color: "#a97618"
-      success-color: "#55703a"
-      info-color: "#4a7189"
-      label-badge-red: "#9a3b2e"
-      label-badge-green: "#55703a"
-      label-badge-blue: "#4a7189"
-      label-badge-yellow: "#a97618"
-      label-badge-grey: "#9c967f"
+      error-color: &l-error "#9a3b2e"
+      warning-color: &l-warning "#a97618"
+      success-color: &l-success "#55703a"
+      info-color: &l-info "#4a7189"
+      label-badge-red: *l-error
+      label-badge-green: *l-success
+      label-badge-blue: *l-info
+      label-badge-yellow: *l-warning
+      label-badge-grey: *l-muted
 
-      # Entity state colors
       state-icon-color: *l-text2
       state-icon-active-color: *l-primary
-      state-icon-unavailable-color: "#9c967f"
-      state-light-active-color: "#c48a12"
-      state-switch-active-color: *l-primary         # matches the toggle
-      state-fan-active-color: "#4a7189"
-      state-cover-active-color: "#7d5f26"
-      state-media_player-active-color: "#6c5290"
-      state-lock-locked-color: "#55703a"
-      state-lock-unlocked-color: "#a97618"
-      state-lock-jammed-color: "#9a3b2e"
-      state-climate-heat-color: "#b4571f"
-      state-climate-cool-color: "#4a7189"
-      state-climate-auto-color: "#55703a"
-      state-climate-dry-color: "#a97618"
-      state-climate-fan_only-color: "#4a7189"
-      state-climate-off-color: "#9c967f"
-      state-person-home-color: "#55703a"
-      state-person-zone-color: "#a97618"
-      state-person-not_home-color: "#9c967f"
-      state-binary_sensor-active-color: "#a97618"
-      state-alert-on-color: "#9a3b2e"
-      state-sun-day-color: "#c48a12"
-      state-sun-night-color: "#6c5290"
+      state-icon-unavailable-color: *l-muted
+      state-light-active-color: &l-light-on "#c48a12"
+      state-switch-active-color: *l-primary
+      state-fan-active-color: *l-info
+      state-cover-active-color: *l-primary
+      state-media_player-active-color: &l-arcane "#6c5290"
+      state-lock-locked-color: *l-success
+      state-lock-unlocked-color: *l-warning
+      state-lock-jammed-color: *l-error
+      state-climate-heat-color: &l-heat "#b4571f"
+      state-climate-cool-color: *l-info
+      state-climate-auto-color: *l-success
+      state-climate-dry-color: *l-warning
+      state-climate-fan_only-color: *l-info
+      state-climate-off-color: *l-muted
+      state-person-home-color: *l-success
+      state-person-zone-color: *l-warning
+      state-person-not_home-color: *l-muted
+      state-binary_sensor-active-color: *l-warning
+      state-alert-on-color: *l-error
+      state-sun-day-color: *l-light-on
+      state-sun-night-color: *l-arcane
 
-      # Switches
       switch-checked-color: *l-primary
-      switch-checked-button-color: "#f4eedd"
-      switch-checked-track-color: "#a98544"
+      switch-checked-button-color: *l-card
+      switch-checked-track-color: *l-primary-soft
       ha-switch-checked-border-color: *l-primary
-      switch-unchecked-color: "#9c967f"
-      switch-unchecked-button-color: "#f4eedd"
-      switch-unchecked-track-color: "#bdb597"
+      switch-unchecked-color: *l-muted
+      switch-unchecked-button-color: *l-card
+      switch-unchecked-track-color: *l-line
 
-      # Sliders
       slider-color: *l-primary
-      slider-bar-color: "#cbbf9f"
-      slider-secondary-color: "#a98544"
+      slider-bar-color: *l-divider
+      slider-secondary-color: *l-primary-soft
 
-      # Inputs, lists, menus
-      input-fill-color: "#ece4cf"
+      input-fill-color: *l-raised
       input-ink-color: *l-text
       input-label-ink-color: *l-text2
-      input-disabled-ink-color: "#9c967f"
-      input-idle-line-color: "#bdb597"
-      input-hover-line-color: "#9c967f"
+      input-disabled-ink-color: *l-muted
+      input-idle-line-color: *l-line
+      input-hover-line-color: *l-muted
       input-dropdown-icon-color: *l-text2
-      paper-listbox-background-color: "#f4eedd"
+      paper-listbox-background-color: *l-card
       paper-item-icon-color: *l-text2
       paper-item-icon-active-color: *l-primary
       mdc-theme-primary: *l-primary
       mdc-theme-secondary: *l-accent
       mdc-theme-surface: *l-card
       mdc-theme-on-surface: *l-text
-      mdc-theme-on-primary: "#f4eedd"
-      mdc-ripple-color: "#7d5f26"
-      mdc-select-fill-color: "#ece4cf"
-      mdc-text-field-fill-color: "#ece4cf"
+      mdc-theme-on-primary: *l-card
+      mdc-ripple-color: *l-primary
+      mdc-select-fill-color: *l-raised
+      mdc-text-field-fill-color: *l-raised
       mdc-select-ink-color: *l-text
       mdc-text-field-ink-color: *l-text
 
-      # Dialogs
-      mdc-dialog-heading-ink-color: "#5e4719"
+      mdc-dialog-heading-ink-color: *l-primary-dark
       mdc-dialog-content-ink-color: *l-text
       dialog-backdrop-filter: "brightness(70%) blur(4px)"
       ha-dialog-scrim-backdrop-filter: "brightness(70%) blur(4px)"
-      mdc-dialog-scrim-color: "rgba(72,50,24,0.58)"  # warm candle-lit umber
+      mdc-dialog-scrim-color: "rgba(72,50,24,0.58)"
 
-      # Tables, code, markdown
-      table-header-background-color: "#ece4cf"
+      table-header-background-color: *l-raised
       table-row-background-color: *l-card
       table-row-alternative-background-color: "#efe8d5"
       code-editor-background-color: "#efe8d5"
       markdown-code-background-color: "#e2dac4"
-      codemirror-keyword: "#a97618"
-      codemirror-operator: "#b4571f"
-      codemirror-variable: "#4a7189"
-      codemirror-variable-2: "#55703a"
-      codemirror-variable-3: "#6c5290"
-      codemirror-builtin: "#7d5f26"
-      codemirror-atom: "#6c5290"
-      codemirror-number: "#b4571f"
-      codemirror-string: "#55703a"
-      codemirror-comment: "#9c967f"
-      codemirror-meta: "#6b6757"
+      codemirror-keyword: *l-warning
+      codemirror-operator: *l-heat
+      codemirror-variable: *l-info
+      codemirror-variable-2: *l-success
+      codemirror-variable-3: *l-arcane
+      codemirror-builtin: *l-primary
+      codemirror-atom: *l-arcane
+      codemirror-number: *l-heat
+      codemirror-string: *l-success
+      codemirror-comment: *l-muted
+      codemirror-meta: *l-text2
       codemirror-property: "#8a6a2f"
-      codemirror-tag: "#9a3b2e"
-      codemirror-attribute: "#a97618"
-      scrollbar-thumb-color: "#a98544"
+      codemirror-tag: *l-error
+      codemirror-attribute: *l-warning
+      scrollbar-thumb-color: *l-primary-soft
 
-      # Energy dashboard
-      energy-solar-color: "#c48a12"
-      energy-grid-consumption-color: "#4a7189"
-      energy-grid-return-color: "#55703a"
-      energy-battery-out-color: "#6c5290"
-      energy-battery-in-color: "#b4571f"
-      energy-gas-color: "#b4571f"
-      energy-water-color: "#4a7189"
+      energy-solar-color: *l-light-on
+      energy-grid-consumption-color: *l-info
+      energy-grid-return-color: *l-success
+      energy-battery-out-color: *l-arcane
+      energy-battery-in-color: *l-heat
+      energy-gas-color: *l-heat
+      energy-water-color: *l-info
 
-      # History/line graph series: palette colors (frost, ember, moss, arcane, amber, red, gold, ...)
-      graph-color-1: "#4a7189"
-      graph-color-2: "#b4571f"
-      graph-color-3: "#55703a"
-      graph-color-4: "#6c5290"
-      graph-color-5: "#a97618"
-      graph-color-6: "#9a3b2e"
-      graph-color-7: "#7d5f26"
-      graph-color-8: "#6b6757"
-      graph-color-9: "#556b3f"
-      graph-color-10: "#c48a12"
+      graph-color-1: *l-info
+      graph-color-2: *l-heat
+      graph-color-3: *l-success
+      graph-color-4: *l-arcane
+      graph-color-5: *l-warning
+      graph-color-6: *l-error
+      graph-color-7: *l-primary
+      graph-color-8: *l-text2
+      graph-color-9: *l-accent
+      graph-color-10: *l-light-on
