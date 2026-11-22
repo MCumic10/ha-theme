@@ -1,6 +1,6 @@
 # Version
 
-**Current version: 2.3.1**
+**Current version: 2.3.2**
 
 ## Versioning rules
 - [Semantic Versioning](https://semver.org/). Stable from 1.0.0 (0.x was the experimental phase).
@@ -11,6 +11,9 @@
 - Release = commit + git tag `vX.Y.Z`.
 
 ## Changelog
+
+### [2.3.2] - 2026-11-22
+- Refactor: repeated palette colors in dark/light modes are now YAML anchors with role names (d-*/l-*); resolved values are unchanged.
 
 ### [2.3.1] - 2026-11-22
 - Chore: removed all comments from the theme file (no value changes).
